@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Content:
+  = @postact.content
+p
+  strong Title:
+  = @postact.title
+
+= link_to 'Edit', edit_postact_path(@postact)
+'|
+= link_to 'Back', postacts_path

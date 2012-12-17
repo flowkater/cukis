@@ -1,4 +1,38 @@
+require 'api_constraints'
+
 Cukis::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
+  namespace :api, defaults: {format: 'json'} do
+    scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
+      resources :posts, only: [:index, :show] do
+        resources :comments, only: [:create, :destroy]
+      end
+
+      resources :notes, only: [:index, :show] do
+        resources :messages
+      end
+
+      devise_scope :user do
+        resources :sessions, only: [:create, :destroy]
+        post 'registrations' => 'registrations#create'
+      end
+
+      get 'register_openfire' => 'main#register_openfire'
+      get 'check_phone' => 'main#check_phone'
+    end
+  end
+
+  root to: "main#home"
+
+  devise_for :clients
+
+  devise_for :users
+
+  resources :postacts
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

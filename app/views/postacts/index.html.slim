@@ -1,0 +1,21 @@
+h1 Listing postacts
+
+table
+  tr
+    th Content
+    th Title
+    th
+    th
+    th
+
+  - @postacts.each do |postact|
+    tr
+      td = postact.content
+      td = postact.title
+      td = link_to 'Show', postact
+      td = link_to 'Edit', edit_postact_path(postact)
+      td = link_to 'Destroy', postact, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Postact', new_postact_path
