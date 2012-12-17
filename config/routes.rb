@@ -29,7 +29,7 @@ Cukis::Application.routes.draw do
 
   devise_for :clients
 
-  devise_for :users
+  devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
 
   resources :postacts
 
