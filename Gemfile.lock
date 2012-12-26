@@ -154,7 +154,6 @@ GEM
     multi_json (1.4.0)
     multi_xml (0.5.1)
     multipart-post (1.1.5)
-    mysql2 (0.3.11)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -212,7 +211,6 @@ GEM
       json (~> 1.4)
     responders (0.9.3)
       railties (~> 3.1)
-    rmagick (2.13.1)
     ruby_parser (3.0.4)
       sexp_processor (~> 4.1)
     sass (3.2.3)
@@ -289,13 +287,11 @@ DEPENDENCIES
   jquery-rails
   kaminari
   koala
-  mysql2
   oauth2
   omniauth
   omniauth-facebook (= 1.4.0)
   rabl
   rails (= 3.2.2)
-  rmagick
   ruby_parser
   sass-rails (~> 3.2.3)
   simple_form

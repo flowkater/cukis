@@ -23,6 +23,18 @@ Cukis::Application.routes.draw do
 
   root to: "main#home"
 
+  match "/teaching", to: "main#teaching"
+  match "/teacher", to:"main#teacher"
+  match "/teamact", to:"main#teamact"
+  match "/campuskids", to:"main#campuskids"
+  match "/campuskids/school", to:"main#campuskids_school"
+  
+  #test 용 라우팅입니다. 테스트후 삭제해주세요.
+
+  match "/test", to:"main#test" 
+
+  #------------------------------------------------ 
+
   devise_for :clients
 
   devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
