@@ -1,0 +1,21 @@
+h1 Listing schoolinfos
+
+table
+  tr
+    th Name
+    th Content
+    th
+    th
+    th
+
+  - @schoolinfos.each do |schoolinfo|
+    tr
+      td = schoolinfo.name
+      td = schoolinfo.content
+      td = link_to 'Show', schoolinfo
+      td = link_to 'Edit', edit_schoolinfo_path(schoolinfo)
+      td = link_to 'Destroy', schoolinfo, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Schoolinfo', new_schoolinfo_path

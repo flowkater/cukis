@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121215054235) do
+ActiveRecord::Schema.define(:version => 20121226054830) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -46,6 +46,13 @@ ActiveRecord::Schema.define(:version => 20121215054235) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "clients", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -72,6 +79,13 @@ ActiveRecord::Schema.define(:version => 20121215054235) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "dayclasses", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "likes", :force => true do |t|
     t.integer  "post_id"
     t.integer  "user_id"
@@ -87,6 +101,13 @@ ActiveRecord::Schema.define(:version => 20121215054235) do
 
   create_table "notes", :force => true do |t|
     t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "notices", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -118,6 +139,30 @@ ActiveRecord::Schema.define(:version => 20121215054235) do
   create_table "relationships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "client_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "replies", :force => true do |t|
+    t.text     "content"
+    t.integer  "repliable_id"
+    t.string   "repliable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "replies", ["repliable_id", "repliable_type"], :name => "index_replies_on_repliable_id_and_repliable_type"
+
+  create_table "schoolinfos", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "teamacts", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -1,10 +1,6 @@
 require 'api_constraints'
 
 Cukis::Application.routes.draw do
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
       resources :posts, only: [:index, :show] do
@@ -32,6 +28,24 @@ Cukis::Application.routes.draw do
   devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
 
   resources :postacts
+
+  resources :teamacts do
+    resources :replies
+  end
+
+  resources :dayclasses do
+    resources :replies
+  end
+
+  resources :articles do
+    resources :replies
+  end
+
+  resources :schoolinfos
+
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

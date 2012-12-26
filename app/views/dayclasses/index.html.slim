@@ -1,0 +1,21 @@
+h1 Listing dayclasses
+
+table
+  tr
+    th Title
+    th Content
+    th
+    th
+    th
+
+  - @dayclasses.each do |dayclass|
+    tr
+      td = dayclass.title
+      td = dayclass.content
+      td = link_to 'Show', dayclass
+      td = link_to 'Edit', edit_dayclass_path(dayclass)
+      td = link_to 'Destroy', dayclass, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Dayclass', new_dayclass_path

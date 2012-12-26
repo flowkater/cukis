@@ -1,0 +1,13 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @article.title
+p
+  strong Content:
+  = @article.content
+
+= link_to 'Back', articles_path
+
+= render "replies/replies"
+= render "replies/form"

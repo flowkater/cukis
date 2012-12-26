@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @dayclass.title
+p
+  strong Content:
+  = @dayclass.content
+
+= link_to 'Edit', edit_dayclass_path(@dayclass)
+'|
+= link_to 'Back', dayclasses_path

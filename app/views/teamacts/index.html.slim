@@ -1,0 +1,21 @@
+h1 Listing teamacts
+
+table
+  tr
+    th Title
+    th Content
+    th
+    th
+    th
+
+  - @teamacts.each do |teamact|
+    tr
+      td = teamact.title
+      td = teamact.content
+      td = link_to 'Show', teamact
+      td = link_to 'Edit', edit_teamact_path(teamact)
+      td = link_to 'Destroy', teamact, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Teamact', new_teamact_path

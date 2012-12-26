@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @teamact.title
+p
+  strong Content:
+  = @teamact.content
+
+= link_to 'Edit', edit_teamact_path(@teamact)
+'|
+= link_to 'Back', teamacts_path
