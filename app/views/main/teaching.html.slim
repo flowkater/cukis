@@ -1,0 +1,52 @@
+.container
+	.row-fluid#wrapper
+		.span8#spanleft
+			.cover_pic
+				= image_tag "http://dummyimage.com/800x400/cfcfcf/ffffff&text=cover pic"
+			.teacher_name_tag
+				h1 UC Berkeley 김민수
+			.teacher_img
+				= image_tag "http://dummyimage.com/180x180/cfcfcf/ffffff&text=profile pic"
+			br
+			.description
+				ul.nav.nav-tabs
+					li.customli 
+						a href="home" data-toggle="tab" 
+							| 설명
+					li.customli
+						a href="history" data-toggle="tab"
+							| 인증 
+					li.customli
+						a href="spec" data-toggle="tab"
+							| 약력
+					li.customli
+						a href="more" data-toggle="tab"
+							| 활동
+			br
+			.review
+				ul.nav.nav-tabs
+					li.customli
+						a href="#review" data-toggle="tab"
+							| 리뷰
+
+		.span4#spanright
+			.detail
+				label 어떤 도움을 드릴까요??
+				textarea row="5" placeholder="메모를 남겨주세요!!"
+				label 한주에 몇번이나 생각하세요?
+				select 
+					option value="1" 1회
+					option value="2" 2회
+					option value="3" 3회
+					option value="0" 3회 이상
+
+				label 한 주에 몇시간이나?
+				input type="text" placeholder="숫자로 입력해주세요 ex) 10"
+
+				label 시간을 정해주세요.
+				input type="text" placeholder="need to revised"
+
+				label 언제 연락드릴까요?
+				input type="text" placeholder="need to revised"
+				br
+				button type="button" 신청하기

@@ -40,7 +40,7 @@ gem 'kaminari'
 gem 'gcm'
 
 # Image
-gem 'rmagick'
+#gem 'rmagick'
 gem 'carrierwave'
 
 # Delayed Job
@@ -65,7 +65,6 @@ group :assets do
 end
 
 group :production do
-	gem 'mysql2' 
 end
 
 group :development do
