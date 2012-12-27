@@ -32,7 +32,8 @@ Cukis::Application.routes.draw do
   match "/teamact", to:"main#teamact"
   match "/campuskids", to:"main#campuskids"
   match "/campuskids/school", to:"main#campuskids_school"
-  
+  match "/dayclass", to:"main#dayclass"
+
   #test 용 라우팅입니다. 테스트후 삭제해주세요.
 
   match "/test", to:"main#test" 
