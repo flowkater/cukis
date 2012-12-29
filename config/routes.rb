@@ -38,6 +38,9 @@ Cukis::Application.routes.draw do
   match "/campuskids/school/stats", to:"main#schoolstat"
   match "/joinact", to:"main#joinact"
   match "/mypage", to:"main#mypage"
+  match "/account", to:"main#mypage_account"
+  match "/pay", to:"main#mypage_pay"
+  match "/sessions", to:"main#mypage_sessions"
 
   #test 용 라우팅입니다. 테스트후 삭제해주세요.
 
