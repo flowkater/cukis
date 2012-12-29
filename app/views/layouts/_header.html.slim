@@ -19,14 +19,19 @@ header.navbar.navbar-static-top.navbar-inverse
 			br
 			.line
 			ul.nav.tabfont
+				li
+					= link_to "홈", "#"
 				li 
-					= link_to "액티비티", '#'
+					= link_to "Day class", '#'
 				li 
-					= link_to "학습멘토", 'teacher'
+					= link_to "학습 멘토", 'teacher'
 				li 
 					= link_to "캠퍼스 키즈", 'campuskids'
 				li 
 					= link_to "팀 액티비티", 'teamact'
+				li
+					= link_to "멘토 팀", '#'  
+
 			ul.nav.pull-right
 				= link_to "#" do
 					= image_tag "be_mento_text.PNG", size: "30x70"

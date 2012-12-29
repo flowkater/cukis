@@ -1,6 +1,8 @@
 require 'api_constraints'
 
 Cukis::Application.routes.draw do
+  resources :tests
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -33,6 +35,9 @@ Cukis::Application.routes.draw do
   match "/campuskids", to:"main#campuskids"
   match "/campuskids/school", to:"main#campuskids_school"
   match "/dayclass", to:"main#dayclass"
+  match "/campuskids/school/stats", to:"main#schoolstat"
+  match "/joinact", to:"main#joinact"
+  match "/mypage", to:"main#mypage"
 
   #test 용 라우팅입니다. 테스트후 삭제해주세요.
 

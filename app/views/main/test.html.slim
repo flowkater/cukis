@@ -1,17 +1,13 @@
-/test 용 페이지 입니다. 삭제해주세요 /
+/test 용 페이지Layout 입니다. 해주세요 /
 
-/.wrapper
-/	.left
-/		.cover_img
-/			=image_tag  "http://dummyimage.com/800x400/cfcfcf/ffffff&text=cover pic"
-/			.name
-/			p UC Berkeley 홍길동
-/			.profile_img
-/			=image_tag "http://dummyimage.com/150x150/cfcfcf/ffffff&text=profile pic"
-/	.right 
-
-.container-fluid
-	.row-fluid
-		.span8
-			
-		.span4
+.container-fluid#wrapper
+	.row-fluid#wrapper
+		.span7#left
+			.cover_pic
+				=image_tag "http://dummyimage.com/800x400/cfcfcf/ffffff&text=cover pic"
+			.teacher_name_tag
+				h1 lorem ipsum
+			.teacher_img
+				=image_tag "http://dummyimage.com/180x180/cfcfcf/ffffff&text=profile pic", class: "teacherimg"
+		.span3#right
+			= image_tag = image_tag "http://dummyimage.com/370x700/cfcfcf/fff&text=rigth div"
