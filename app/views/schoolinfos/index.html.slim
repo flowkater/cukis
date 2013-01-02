@@ -1,21 +1,10 @@
-h1 Listing schoolinfos
-
-table
-  tr
-    th Name
-    th Content
-    th
-    th
-    th
-
+ul.thumbnails#thumb-schoollogo
   - @schoolinfos.each do |schoolinfo|
-    tr
-      td = schoolinfo.name
-      td = schoolinfo.content
-      td = link_to 'Show', schoolinfo
-      td = link_to 'Edit', edit_schoolinfo_path(schoolinfo)
-      td = link_to 'Destroy', schoolinfo, :confirm => 'Are you sure?', :method => :delete
-
-br
-
-= link_to 'New Schoolinfo', new_schoolinfo_path
+    .school-logo
+      li.schoollist
+        .row
+        	#schoollist
+	          .span8#span-logo 
+	            = link_to schoolinfo do
+	              = image_tag schoolinfo.logo, id: "school-logo-img"
+	            .schoolindex-divider

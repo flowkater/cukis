@@ -23,9 +23,11 @@ Cukis::Application.routes.draw do
 
   root to: "main#home"
 
+  #------------------------------------------------  
+
   match "/teaching", to: "main#teaching"
   match "/teacher", to:"main#teacher"
-  match "/teamact", to:"main#teamact"
+  # match "/teamact", to:"main#teamact"
   match "/campuskids", to:"main#campuskids"
   match "/campuskids/school", to:"main#campuskids_school"
   
@@ -34,6 +36,9 @@ Cukis::Application.routes.draw do
   match "/test", to:"main#test" 
 
   #------------------------------------------------ 
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   devise_for :clients
 
@@ -53,11 +58,12 @@ Cukis::Application.routes.draw do
     resources :replies
   end
 
-  resources :schoolinfos
-
-  ActiveAdmin.routes(self)
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  resources :schoolinfos, only: [:index, :show] do
+    resources :articles
+    member do
+      get 'stats'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

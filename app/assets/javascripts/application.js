@@ -12,6 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap
+//= require wmd/wmd
+//= require wmd/showdown
 
 $('.dropdown-toggle').dropdown()
+
+$(function(){
+	new WMDEditor({
+		input: "notes",
+		button_bar: "notes-button",
+		preview: "notes-preview",
+		helpLink: "http://daringfireball.net/projects/markdown/syntax",
+	});
+})

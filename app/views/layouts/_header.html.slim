@@ -1,32 +1,38 @@
 header.navbar.navbar-static-top.navbar-inverse
 	.navbar-inner.head
 		.container
-			= link_to '#' do
+			= link_to root_path do
 				= image_tag "cukis_logo.png", size: "100x64"
 			ul.nav.pull-right
-				.userlogin = link_to "로그인", user_session_path
-				/ .dropdown#dropposition
-				/ 	= link_to '#', :id => "top-information", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
-				/ 		.drop-username 
-				/ 			= image_tag "http://dummyimage.com/30x30/cfcfcf/ffffff.png", class: "drop-userimage"
-				/ 			| User Name
-				/ 			= image_tag "triangle.PNG", class: "drop-arrow"		
-				/ 	ul.dropdown-menu
-				/ 		li = link_to 'First', '#'
-				/ 		li = link_to 'Second', '#'
-				/ 		li.divider
-				/ 		li = link_to 'Third', '#'
+				- unless user_signed_in?
+					.userlogin = link_to "로그인", user_session_path
+				- else
+					.dropdown#dropposition
+						= link_to '#', :id => "top-information", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
+							.drop-username 
+								= image_tag "http://dummyimage.com/30x30/cfcfcf/ffffff.png", class: "drop-userimage"
+								= current_user.nickname
+								= image_tag "triangle.PNG", class: "drop-arrow"		
+						ul.dropdown-menu
+							li = link_to 'First', '#'
+							li = link_to 'Second', '#'
+							li.menu-divider
+							li = link_to "로그아웃", destroy_user_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
+							li = link_to destroy_user_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?" do
+								| 로그아웃
 			br
 			.line
 			ul.nav.tabfont
 				li 
-					= link_to "액티비티", '#'
+					= link_to "액티비티", dayclasses_path
 				li 
 					= link_to "학습멘토", 'teacher'
 				li 
-					= link_to "캠퍼스 키즈", 'campuskids'
+					= link_to "캠퍼스 키즈", schoolinfos_path
 				li 
-					= link_to "팀 액티비티", 'teamact'
+					= link_to "팀 액티비티", teamacts_path
 			ul.nav.pull-right
 				= link_to "#" do
-					= image_tag "be_mento_text.PNG", size: "30x70"
+					= image_tag "bemento.png", size: "43x43"
+				= link_to new_dayclass_path do
+					= image_tag "makeclass.png", size: "43x43"

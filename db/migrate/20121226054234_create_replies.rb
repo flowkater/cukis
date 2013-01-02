@@ -4,6 +4,7 @@ class CreateReplies < ActiveRecord::Migration
       t.text :content
       t.integer :repliable_id
       t.string :repliable_type
+      t.references :user
 
       t.timestamps
     end

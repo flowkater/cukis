@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226054830) do
+ActiveRecord::Schema.define(:version => 20121226072355) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -49,8 +49,10 @@ ActiveRecord::Schema.define(:version => 20121226054830) do
   create_table "articles", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "schoolinfo_id"
+    t.boolean  "approve",       :default => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "clients", :force => true do |t|
@@ -82,8 +84,19 @@ ActiveRecord::Schema.define(:version => 20121226054830) do
   create_table "dayclasses", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.float    "fee"
+    t.integer  "minnumber"
+    t.integer  "maxnumber"
+    t.date     "fromdate"
+    t.date     "enddate"
+    t.time     "fromtime"
+    t.time     "endtime"
+    t.string   "doc"
+    t.string   "place"
+    t.integer  "client_id"
+    t.boolean  "approve",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "likes", :force => true do |t|
@@ -147,15 +160,28 @@ ActiveRecord::Schema.define(:version => 20121226054830) do
     t.text     "content"
     t.integer  "repliable_id"
     t.string   "repliable_type"
+    t.integer  "user_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
 
   add_index "replies", ["repliable_id", "repliable_type"], :name => "index_replies_on_repliable_id_and_repliable_type"
 
-  create_table "schoolinfos", :force => true do |t|
-    t.string   "name"
+  create_table "reviews", :force => true do |t|
+    t.string   "title"
     t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "schoolinfos", :force => true do |t|
+    t.string   "maintitle"
+    t.string   "subtitle"
+    t.text     "content"
+    t.string   "logo"
+    t.string   "logoband"
+    t.string   "logocircle"
+    t.string   "logochart"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

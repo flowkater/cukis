@@ -16,6 +16,9 @@ gem 'simple_form'
 gem 'hpricot'
 gem 'ruby_parser'
 
+# Editor
+gem 'wmd-rails'
+
 # authentication
 gem 'devise'
 gem 'omniauth'
@@ -40,7 +43,7 @@ gem 'kaminari'
 gem 'gcm'
 
 # Image
-#gem 'rmagick'
+gem 'rmagick'
 gem 'carrierwave'
 
 # Delayed Job
@@ -54,8 +57,8 @@ gem 'dotiw', :git => 'https://github.com/ChoJaewoo/dotiw.git'
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'bootstrap-sass', '~> 2.2.2.0'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'twitter-bootstrap-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer'

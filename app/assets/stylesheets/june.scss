@@ -1,0 +1,135 @@
+//-----------------
+// #spanleft{
+// 	width: 800px;
+// 	float: left;
+// }
+
+/* teaching page css */
+.row-fluid{ 
+	// width: 1300px;
+
+	.span8{
+		float: left;
+		border :1px solid black;
+
+
+		.teacher_name_tag{
+			position: absolute;
+			margin-left: 100px;
+			margin-top: 10px;
+			z-index: 2;
+		}
+
+		.teacher_img {
+			z-index: 2;
+			margin-left: 60%;
+			margin-top: -15%;
+			border: 7px solid white;
+		}
+
+		.description{
+			margin-top :180px;
+			margin-right: auto;
+			margin-left: auto;
+			border: 1px solid black;
+		
+			ul.nav.nav-tabs{
+				background-color: #2f3224;
+				
+			}
+
+			li.customli{
+				padding-top: 10px;
+				padding-right: 10px;
+				padding-left: 10px;
+
+			}
+
+			li:hover.customli{
+				color: #ffffff;
+
+
+			}
+		}
+
+
+		.review{
+			padding-right: 5%;
+			padding-left: 5%;
+			margin-right: auto;
+			margin-left: auto;
+			
+			
+			ul.nav.nav-tabs{
+				background-color: #2f3224;
+			}
+
+
+			li.customli{
+				padding-top: 10px;
+				padding-right: 10px;
+				padding-left: 10px;
+
+				a{
+					color: #fff;
+				}
+			}
+
+			li:hover.customli{
+				color: #ffffff;
+			}
+
+		}
+	}
+
+	.span4{	
+		width: 300px;
+		float: right;
+		border : 1px solid black;		
+
+		.detail{
+			padding-top: 10px;
+			padding-left: 10px;
+			padding-bottom: 10px;
+
+		}
+	}
+}
+
+// #spanright{
+// 	width: 300px;
+// 	float: right;
+// }
+
+//campuskids css
+.divider{
+	width: 100%;
+	height: 1px;
+	background-color: #cfcfcf;
+}
+
+.span3{
+	color: #c2bdbd;
+}
+
+//
+
+//campuskids_school css{
+.divider{
+	width: 960px;
+	height: 1px;
+	background-color: #cfcfcf;
+}
+//--------------------------------
+.nav-tabs > li > a{
+	color: white;
+}
+.nav-tabs > li > a:hover{
+	color: black;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:hover {
+	color :black;
+}		
+
+///

@@ -9,5 +9,30 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require 'wmd/wmd'
  *= require_tree .
 */
+
+@import "bootstrap";
+
+.form-horizontal .control-label{
+	width: 100px;
+	text-align: left;
+}
+
+.form-horizontal .controls{
+	margin-left: 100px;
+}
+
+.container{
+	width: 1170px;
+}
+
+.navbar .container{
+	width: 1170px;
+}
+
+.body-con { 
+	padding-top: 10px;
+}
+

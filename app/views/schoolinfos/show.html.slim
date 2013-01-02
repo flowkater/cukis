@@ -1,12 +1,25 @@
-p#notice = notice
-
-p
-  strong Name:
-  = @schoolinfo.name
-p
-  strong Content:
-  = @schoolinfo.content
-
-= link_to 'Edit', edit_schoolinfo_path(@schoolinfo)
-'|
-= link_to 'Back', schoolinfos_path
+.school_wideimg = image_tag @schoolinfo.logoband, class: "widecenter"
+.schoolbox
+	.row
+		.span11
+			.row
+				.span2
+					= image_tag @schoolinfo.logocircle, id: "sclogo"
+				.span8
+					h1 = @schoolinfo.maintitle
+					h3 = @schoolinfo.subtitle
+			h2 = @schoolinfo.content
+		.span3#scchart
+			= image_tag @schoolinfo.logochart
+	.schoolshow-divider
+	- @articles.each do |article|
+		= link_to article do
+			.article
+				.row
+					.span3
+						= image_tag "http://www.dummyimage.com/300x225/cfcfcf/fff", id: "articlethumb"
+					.span7
+						.article-head
+							h2#article-title = article.title
+							p#article-date = article.created_at
+						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

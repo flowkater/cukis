@@ -1,21 +1,11 @@
-h1 Listing teamacts
-
-table
-  tr
-    th Title
-    th Content
-    th
-    th
-    th
-
+ul.thumbnails
   - @teamacts.each do |teamact|
-    tr
-      td = teamact.title
-      td = teamact.content
-      td = link_to 'Show', teamact
-      td = link_to 'Edit', edit_teamact_path(teamact)
-      td = link_to 'Destroy', teamact, :confirm => 'Are you sure?', :method => :delete
-
-br
+    li.teamactspan
+      .actbox
+        .actimg = image_tag "http://www.dummyimage.com/500x250/cfcfcf/fff&text=team-activity"
+        h1 =teamact.title
+        p
+          a 김훈남 
+          | 선생님과 함께
 
 = link_to 'New Teamact', new_teamact_path

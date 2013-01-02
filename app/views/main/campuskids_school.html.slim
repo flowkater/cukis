@@ -1,11 +1,16 @@
 .schoolbox
-	.span9
-		.school_wideimg = image_tag "http://www.dummyimage.com/800x200/cfcfcf/fff&text=school_logo"
-		.school_name
-			h1 university of california Berkeley
-			h3 2220 University Avenue, Berkeley, CA 94704
-			p 더보기
-
-			h2 항상 stanford 한테 처발리는 berkeley
-		br
-		.divider
+	.row
+		.school_wideimg = image_tag "http://www.dummyimage.com/960x200/cfcfcf/fff&text=schoolimage"
+		.row#school-name
+			.schoolspan
+				.span1#sclogo
+					= image_tag "http://www.dummyimage.com/60x60/cfcfcf/fff&text=schoolimage"
+				.span8#scname
+					h1 university of california Berkeley
+					h3 2220 University Avenue, Berkeley, CA 94704
+				.span3#scchart
+					= image_tag "http://www.dummyimage.com/100x100/cfcfcf/fff&text=schoochart"
+		h2 항상 stanford 한테 처발리는 berkeley, 항상 stanford 한테 처발리는 berkeley, 항상 stanford 한테 처발리는 berkeley, 항상 stanford 한테 처발리는 berkeley
+		.divider#schoolshow-divider
+		- @articles.each do |article|
+			.article

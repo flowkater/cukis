@@ -11,20 +11,26 @@ class User < ActiveRecord::Base
   # token 유저 생성시 생성, 기본 cookie 생성
   before_save :ensure_authentication_token
 
+
+  #----------------------------
   # like
   has_many :likes, dependent: :destroy
   # comment
   has_many :comments, dependent: :destroy
+  #----------------------------
 
-  # email require
-  def email_required?
-    super && phone.blank?
-  end
+  # reply
+  has_many :replies, as: :repliable
 
-  # password require
-  def password_required?
-    super && phone.blank?
-  end
+  # # email require
+  # def email_required?
+  #   super && phone.blank?
+  # end
+
+  # # password require
+  # def password_required?
+  #   super && phone.blank?
+  # end
 
   # username = gets.chomp
   # password = gets.chomp
