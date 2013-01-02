@@ -1,150 +1,155 @@
 h1#head 회원가입
+p#head2 쿠키스에 오신것을 환영합니다.
 .dividers
 br
-form.form-horizontal
-  .control-group
-    label.control-label for="inputEmail"
-      | 이메일
-    .controls
-      input#forms type="text" placeholder="youremail@example.com"
-  .control-group
-    label.control-label for="inputPassword" 
-      | 비밀번호
-    .controls
-      input#form type="text" 
-      /placeholder="비밀번호는 6자 이상 영어,숫자 조합으로 입력해주세요."
-  .control-group
-    label.control-label for="inputPassword"
-      | 비밀번호 확인
-    .controls
-      input#input1 type="text"
-  .control-group
-    label.control-label for="inputName"
-      | 이름
-    .controls 
-      input type="text" id="inputName" placeholder="이름을 입력해주세요"
-  .control-group
-    label.control-label for="gender"
-      | 성별
-    .control
-      select.span1
-        option
-          | 남자
-        option
-          | 여자
-  .control-group
-    label.control-label for="inputBD" 
-      | 생년월일
-    .controls
-      input.input-mini type="text" placeholder="yyyy"
-      | -
-      /달
-      select.span1
-        option
-          | 1월
-        option
-          | 2월
-        option
-          | 3월
-        option
-          | 4월
-        option
-          | 5월
-        option
-          | 6월
-        option
-          | 7월
-        option
-          | 8월
-        option
-          | 9월
-        option
-          | 10월
-        option
-          | 11월
-        option
-          | 12월
-      | -
-      /일
-      select.span1
-        option
-          | 1일
-        option
-          | 2일
-        option
-          | 3일
-        option
-          | 4일
-        option
-          | 5일
-        option
-          | 6일
-        option
-          | 7일
-        option
-          | 8일
-        option
-          | 9일
-        option
-          | 10일
-        option
-          | 11일
-        option
-          | 12일
-        option
-          | 13일
-        option
-          | 14일
-        option
-          | 15일
-        option
-          | 16일
-        option
-          | 17일
-        option
-          | 18일
-        option
-          | 19일
-        option
-          | 20일
-        option
-          | 21일
-        option
-          | 22일
-        option
-          | 23일
-        option
-          | 24일
-        option
-          | 25일
-        option
-          | 26일
-        option
-          | 27일
-        option
-          | 28일
-        option
-          | 29일
-        option
-          | 30일
-        option
-          | 31일
-  .control-group
-    label.control-label for="inputPhone"
-      | 전화번호
-    .controls 
-      select.span1
-        option
-          | 010
-        option
-          | 011
-        option
-          | 016
-        option
-          | 017
-        option
-          | 019
-      | -
-      input class="input-mini" type="text"
-      | -
-      input class="input-mini" type="text"
+.row
+  .span6
+    form.form-horizontal
+      .control-group
+        label.control-label for="inputEmail"
+          | 이메일
+        .controls
+          input type="text" placeholder="youremail@example.com"
+      .control-group
+        label.control-label for="inputPassword" 
+          | 비밀번호
+        .controls
+          input#form type="text" 
+          /placeholder="비밀번호는 6자 이상 영어,숫자 조합으로 입력해주세요."
+      .control-group
+        label.control-label for="inputPassword"
+          | 비밀번호 확인
+        .controls
+          input#input1 type="text"
+      .control-group
+        label.control-label for="inputName"
+          | 이름
+        .controls 
+          input type="text" id="inputName" placeholder="이름을 입력해주세요"
+      .control-group
+        label.control-label for="gender"
+          | 성별
+        .control
+          select.span1
+            option
+              | 남자
+            option
+              | 여자
+      .control-group
+        label.control-label for="inputBD" 
+          | 생년월일
+        .controls
+          input.input-mini type="text" placeholder="yyyy"
+          | -
+          /달
+          select.span1
+            option
+              | 1월
+            option
+              | 2월
+            option
+              | 3월
+            option
+              | 4월
+            option
+              | 5월
+            option
+              | 6월
+            option
+              | 7월
+            option
+              | 8월
+            option
+              | 9월
+            option
+              | 10월
+            option
+              | 11월
+            option
+              | 12월
+          | -
+          /일
+          select.span1
+            option
+              | 1일
+            option
+              | 2일
+            option
+              | 3일
+            option
+              | 4일
+            option
+              | 5일
+            option
+              | 6일
+            option
+              | 7일
+            option
+              | 8일
+            option
+              | 9일
+            option
+              | 10일
+            option
+              | 11일
+            option
+              | 12일
+            option
+              | 13일
+            option
+              | 14일
+            option
+              | 15일
+            option
+              | 16일
+            option
+              | 17일
+            option
+              | 18일
+            option
+              | 19일
+            option
+              | 20일
+            option
+              | 21일
+            option
+              | 22일
+            option
+              | 23일
+            option
+              | 24일
+            option
+              | 25일
+            option
+              | 26일
+            option
+              | 27일
+            option
+              | 28일
+            option
+              | 29일
+            option
+              | 30일
+            option
+              | 31일
+      .control-group
+        label.control-label for="inputPhone"
+          | 전화번호
+        .controls 
+          select.span1
+            option
+              | 010
+            option
+              | 011
+            option
+              | 016
+            option
+              | 017
+            option
+              | 019
+          | -
+          input class="input-mini" type="text"
+          | -
+          input class="input-mini" type="text"
+  .span6
+    .rightimg = image_tag "livecollege.png"
