@@ -44,6 +44,7 @@ Cukis::Application.routes.draw do
   match "/testsignup", to:"main#testsignup"
   match "/dayclassshow", to:"main#dayclassshow"
   match "/articlebox", to:"main#articlebox"
+  match "/jendayclass", to:"main#jendayclass"
 
   #test 용 라우팅입니다. 테스트후 삭제해주세요.
 
