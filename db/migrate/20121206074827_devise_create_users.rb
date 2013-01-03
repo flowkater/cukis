@@ -2,16 +2,22 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       ## Database authenticatable
-      t.string :email,              :null => false, :default => ""
-      t.string :encrypted_password, :null => false, :default => ""
+      t.string :email,              :null => false, :default => "" # 이메일
+      t.string :encrypted_password, :null => false, :default => "" # 패스워드
 
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
 
       ## Information
-      t.string :nickname, null: false, default: ""
-      t.string :phone, null: false, default: ""
+      t.string :nickname, null: false, default: "" # 이름
+      t.string :phone # 전화번호
+      t.string :phone_first
+      t.string :phone_second
+      t.string :phone_third
+      t.string :gender # 성별
+      t.date :birthday # 생일
+
       t.string :gcm_regid
 
       ## Rememberable
@@ -46,7 +52,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
     add_index :users, :authentication_token, unique: true
-    add_index :users, :phone, unique: true
     add_index :users, :nickname, unique: true
   end
 end

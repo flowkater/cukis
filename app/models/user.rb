@@ -6,10 +6,11 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :phone, :nickname, :gcm_regid
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :phone,
+                 :nickname, :gcm_regid,:gender, :birthday, :phone_first, :phone_second, :phone_third
 
   # token 유저 생성시 생성, 기본 cookie 생성
-  before_save :ensure_authentication_token
+  before_save :ensure_authentication_token, :combine_phone
 
 
   #----------------------------
@@ -21,6 +22,10 @@ class User < ActiveRecord::Base
 
   # reply
   has_many :replies, as: :repliable
+
+  def combine_phone
+    self.phone = phone_first + phone_second + phone_third
+  end
 
   # # email require
   # def email_required?

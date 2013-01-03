@@ -1,21 +1,14 @@
-h1 Listing dayclasses
-
-table
-  tr
-    th Title
-    th Content
-    th
-    th
-    th
-
-  - @dayclasses.each do |dayclass|
-    tr
-      td = dayclass.title
-      td = dayclass.content
-      td = link_to 'Show', dayclass
-      td = link_to 'Edit', edit_dayclass_path(dayclass)
-      td = link_to 'Destroy', dayclass, :confirm => 'Are you sure?', :method => :delete
-
-br
-
-= link_to 'New Dayclass', new_dayclass_path
+.dayclasswrapper    
+  ul.thumbnails
+    li.dayclassspan
+      .activity
+        .coverimg = image_tag "http://dummyimage.com/400x300/cfcfcf/ffffff.png"
+        .teacherimg = image_tag "http://dummyimage.com/150x150/cfcfcf/ffffff.png", class: "teacher_img"
+        h3#teacher_name  부경대 조재우 선생님
+        p#subject 비오는날, 해물파전먹으며, 안드로이드 배우기.
+    li.dayclassspan
+      .activity
+        .coverimg = image_tag "http://dummyimage.com/400x300/cfcfcf/ffffff.png"
+        .teacherimg = image_tag "http://dummyimage.com/150x150/cfcfcf/ffffff.png", class: "teacher_img"
+        h3#teacher_name  부경대 조재우 선생님
+        p#subject 비오는날, 해물파전먹으며, 안드로이드 배우기.

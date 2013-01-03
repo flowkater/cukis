@@ -1,11 +1,25 @@
-h2 Sign up
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    = f.input :nickname, :required => true
-    = f.input :password, :required => true
-    = f.input :password_confirmation, :required => true
-  .form-actions
-    = f.button :submit, "Sign up"
-= render "devise/shared/links"
+.user-signup
+  h1#head 회원가입
+  p#head2 쿠키스에 오신 것을 환영합니다.
+  .divider
+  .row
+    .span7
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form-horizontal' } ) do |f|
+        = f.error_notification
+        .form-inputs
+          = f.input :email, required: false, :autofocus => true, label: "이메일", input_html:{id: "sessionsheight"}, placeholder: "ex) example@cukis.net"
+          = f.input :password, required: false, label: "비밀번호", input_html:{id: "sessionsheight"}, placeholder: "비밀번호는 6자 이상!"
+          = f.input :password_confirmation, required: false, label: "비밀번호 확인", input_html:{id: "sessionsheight"}
+          = f.input :nickname, required: false, label: "이름", input_html:{id: "sessionsheight"}
+          = f.input :gender, required: false, label: "성별", input_html:{class: "gender"}, as: :select, collection: ["남자", "여자"]
+          = f.input :birthday, required: false, label: "생년월일", input_html:{class: "birthday"}, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year, use_month_numbers: true
+          = f.input :phone, label: "전화번호" do
+            = f.input_field :phone_first, id: "phonenumber", as: :select, collection: ["010","011","016","017","019","018"], label: false
+            .hipen -
+            = f.input_field :phone_second, id: "phonenumber", label: false
+            .hipen -
+            = f.input_field :phone_third, id: "phonenumber", label: false
+        = f.button :submit, "가입하기", class: "btn btn-primary"
+    .span6
+      .rightimg
+        = image_tag "livecollege.png"

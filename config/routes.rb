@@ -40,15 +40,15 @@ Cukis::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :clients
+  devise_for :clients, path_names: {sign_in: 'login', sign_out: 'logout'}
 
   devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
 
   resources :postacts
 
-  resources :teamacts do
-    resources :replies
-  end
+  # resources :teamacts do
+    # resources :replies
+  # end
 
   resources :dayclasses do
     resources :replies

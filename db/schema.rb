@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20121226072355) do
     t.time     "endtime"
     t.string   "doc"
     t.string   "place"
+    t.string   "coverpic"
     t.integer  "client_id"
     t.boolean  "approve",    :default => false
     t.datetime "created_at",                    :null => false
@@ -199,7 +200,12 @@ ActiveRecord::Schema.define(:version => 20121226072355) do
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.string   "nickname",               :default => "", :null => false
-    t.string   "phone",                  :default => "", :null => false
+    t.string   "phone"
+    t.string   "phone_first"
+    t.string   "phone_second"
+    t.string   "phone_third"
+    t.string   "gender"
+    t.date     "birthday"
     t.string   "gcm_regid"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          :default => 0
@@ -215,7 +221,6 @@ ActiveRecord::Schema.define(:version => 20121226072355) do
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["nickname"], :name => "index_users_on_nickname", :unique => true
-  add_index "users", ["phone"], :name => "index_users_on_phone", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

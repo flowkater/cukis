@@ -1,0 +1,56 @@
+//------------ sessions/new
+
+.user-signup{
+	.form-inputs{
+		margin-left: 100px;
+	}
+	#sessionsheight{
+		height: 30px;
+	}	
+	.form-horizontal{
+		margin-top: 40px;
+	}
+
+	h1#head{
+		margin-left: 20px;
+	}
+
+	p#head2{
+		margin-left: 20px;
+	}
+	.rightimg{
+		margin-top: 30px;
+		margin-left: 100px;
+	}
+
+	.divider{
+		width: 100%;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		height: 1px;
+		background-color: #cfcfcf;
+		margin-left: 5px;
+	}
+	select.gender{
+		width: 90px;
+	}
+	select.birthday{
+		text-align: right;
+		width: 70px;
+		float: left;
+		margin-right: 10px;
+	}
+
+	#phonenumber{
+		width: 90px;
+		height: 30px;
+		float: left;
+	}
+	.hipen{
+		float: left;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+}
+
+//------------

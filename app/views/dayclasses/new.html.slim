@@ -1,4 +1,4 @@
-h1 Dayn 클래스 개설하기
+h1 Day 클래스 개설하기
 .dayclass-form
 	.row
 		.span9#dayclass-form
@@ -18,16 +18,18 @@ h1 Dayn 클래스 개설하기
 						.tail-label 최대
 				.hero-unit#dayclass-hero
 					.form-date#form-control
-						= f.input :fromdate, as: :string, input_html: {id: 'etc-form-date'}, wrapper_html: {id: "form-date-float"}, label: "일정"
+						= f.input :fromdate, as: :string, input_html: {id: 'etc-form-date'}, wrapper_html: {id: "form-date-float"}, label: "일정", placeholder: "일자"
 						#form-float
-							= f.input :fromtime, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper: false
+							= f.input :fromtime, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper: false, placeholder: "시간"
 						.tail-date 부터
-						= f.input :enddate, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper_html: {id: "form-date-float", class: "form-end-float"}
+						= f.input :enddate, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper_html: {id: "form-date-float", class: "form-end-float"}, placeholder: "일자"
 						#form-float
-							= f.input :endtime, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper: false
+							= f.input :endtime, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper: false, placeholder: "시간"
 						.tail 까지
-					= f.input :place, input_html: {id: 'etc-form-place'}
+					= f.input :place, label: "장소" do
+						= f.input_field :place, id: 'etc-form-place'
+						= button_tag content_tag(:p, '검색'), type: 'button', class: 'btn btn-primary', id: 'place-button'
 				.from-actions
-					= f.button :submit, class: "btn btn-primary"
+					= f.button :submit, "클래스 만들기", class: "btn btn-primary"
 		.span5#daylass-formhint
 			.hero-unit

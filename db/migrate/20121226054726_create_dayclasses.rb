@@ -12,6 +12,7 @@ class CreateDayclasses < ActiveRecord::Migration
       t.time :endtime
       t.string :doc
       t.string :place
+      t.string :coverpic
       t.references :client
       t.boolean :approve, default: false
 

@@ -27,6 +27,8 @@
 
 #etc-form-size{
 	height: 30px;
+	width: 100px;
+	text-align: right;
 }
 
 #etc-form-date{
@@ -102,7 +104,7 @@
 }
 
 .tail-label{
-	padding-left: 310px;
+	padding-left: 210px;
 	font-size: 14px;
 }
 
@@ -120,8 +122,65 @@
 	height: 30px;
 }
 
+#place-button{
+	margin-left: 5px;
+}
+
 .dayclass-form{
 	label{
 		font-weight: bold;
+	}
+}
+
+
+//- Index
+.span4#dayclassbox{
+	width:384px;
+	height:384px;
+}
+
+.profileimg{
+	
+	float:right;
+	z-index: 10;
+	margin-right: 20%;
+	margin-bottom: 30%;
+	border: 2px solid black;
+}
+
+.dayclasswrapper{
+	width: 100%;
+
+	ul.thumbnails{
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	
+		li.dayclassspan{
+			width: 400px;
+			// height: 450px;
+			border:1px solid black;
+		
+			.teacherimg{
+				z-index: 10;
+				margin-left: 230px;
+				margin-top: -100px;
+				.teacher_img{
+					border: 5px solid white;	
+				}
+			}
+			
+			h3#teacher_name{
+				margin-top: -40px;
+				font-size: 20px;
+				margin-left: 10px;
+				z-index: 10;
+			}
+			
+			p#subject{
+				margin-left: 10px;
+				z-index: 5;
+			}
+		}
 	}
 }
