@@ -41,6 +41,7 @@ Cukis::Application.routes.draw do
   match "/account", to:"main#mypage_account"
   match "/pay", to:"main#mypage_pay"
   match "/sessions", to:"main#mypage_sessions"
+  match "/testsignup", to:"main#testsignup"
 
   #test 용 라우팅입니다. 테스트후 삭제해주세요.
 

@@ -1,12 +1,13 @@
-h2 Sign up
+h2 회원가입
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = f.error_notification
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    = f.input :password, :required => true
-    = f.input :password_confirmation, :required => true
-    = f.input :nickname, :required => true
-    = f.input :phone, :required =>true
-  .form-actions
-    = f.button :submit, "Sign up"
+  .form-div
+	  .form-inputs
+	    = f.input :email, :required => true, :autofocus => true
+	    = f.input :password, :required => true
+	    = f.input :password_confirmation, :required => true
+	    = f.input :nickname, :required => true
+	    = f.input :phone, :required =>true
+	  .form-actions
+	    = f.button :submit, "Sign up"
 = render "devise/shared/links"

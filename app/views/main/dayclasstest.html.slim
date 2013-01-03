@@ -1,0 +1,33 @@
+h1 Dayn 클래스 개설하기
+.dayclass-form
+	.row
+		.span9#dayclass-form
+			= simple_form_for @dayclass, html: { class: 'form-horizontal' } do |f|
+				.hero-unit#dayclass-hero
+					= f.input :title, label: "제목", input_html: {id: 'title-form-size'}
+					= f.input :content, label: "소개", input_html: { id: 'form-size-text'}
+				.hero-unit#dayclass-hero
+					.dayclass-fee
+						= f.input :fee, label: "수강료", input_html: {id: 'etc-form-size'}, as: :string, wrapper_html: {id: 'fee-form'}
+						.tail-label 원 / 명
+					.dayclass-min
+						= f.input :minnumber, label: "인원", input_html: {id: 'etc-form-size'}, wrapper_html: {id: 'min-form'}
+						.tail-label 최소
+					.dayclass-max
+						= f.input :maxnumber, label: false, input_html: {id: 'etc-form-size'},wrapper_html: {id: 'min-form'}
+						.tail-label 최대
+				.hero-unit#dayclass-hero
+					.form-date#form-control
+						= f.input :fromdate, as: :string, input_html: {id: 'etc-form-date'}, wrapper_html: {id: "form-date-float"}, label: "일정"
+						#form-float
+							= f.input :fromtime, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper: false
+						.tail-date 부터
+						= f.input :enddate, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper_html: {id: "form-date-float", class: "form-end-float"}
+						#form-float
+							= f.input :endtime, as: :string, input_html: {id: 'etc-form-date'}, label: false ,wrapper: false
+						.tail 까지
+					= f.input :place, input_html: {id: 'etc-form-place'}
+				.from-actions
+					= f.button :submit, class: "btn btn-primary"
+		.span5#daylass-formhint
+			.hero-unit
