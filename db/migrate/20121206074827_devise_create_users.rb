@@ -17,6 +17,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :phone_third
       t.string :gender # 성별
       t.date :birthday # 생일
+      t.boolean :use_policy
+      t.boolean :personal_policy
+      t.boolean :student
+      t.boolean :parent
 
       t.string :gcm_regid
 

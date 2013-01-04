@@ -1,12 +1,21 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @dayclass.title
-p
-  strong Content:
-  = @dayclass.content
-
-= link_to 'Edit', edit_dayclass_path(@dayclass)
-'|
-= link_to 'Back', dayclasses_path
+.container-fluid#wrapper
+	.row-fluid#wrapper
+		.span7#left
+			.profile	
+				.cover_pic
+					=image_tag @dayclass.coverpic.url(:show_cover)
+				.teacher_img
+					=image_tag @dayclass.client.profile.url(:show_profile), class: "teacherimg"
+				.name
+					.schoollogo= image_tag @dayclass.client.profile.url(:show_profile), class: "teacherimg"
+					p#major 
+						= @dayclass.client.school
+						| , &nbsp;
+						= @dayclass.client.major
+					p#name = @dayclass.client.name
+			.teacher_name_tag
+				h1.title = @dayclass.title
+			.content
+				= @dayclass.content.html_safe
+		.span3#right
+			=image_tag "http://dummyimage.com/370x500/cfcfcf/fff"

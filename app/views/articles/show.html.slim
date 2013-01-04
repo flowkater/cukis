@@ -11,3 +11,25 @@ p
 
 = render "replies/replies"
 = render "replies/form"
+
+.container-fluid#wrapper
+	.row-fluid#wrapper
+		.span7#left
+			.profile	
+				.cover_pic
+					=image_tag "http://dummyimage.com/370x500/cfcfcf/fff"
+				.teacher_img
+					=image_tag @dayclass.client.profile.url(:show_profile), class: "teacherimg"
+				.name
+					.schoollogo= image_tag @dayclass.client.profile.url(:show_profile), class: "teacherimg"
+					p#major 
+						= @dayclass.client.school
+						| , &nbsp;
+						= @dayclass.client.major
+					p#name = @dayclass.client.name
+			.teacher_name_tag
+				h1.title = @dayclass.title
+			.content
+				= @dayclass.content.html_safe
+		.span3#right
+			=image_tag "http://dummyimage.com/370x500/cfcfcf/fff"

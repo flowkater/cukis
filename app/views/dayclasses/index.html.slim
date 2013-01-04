@@ -1,14 +1,40 @@
-.dayclasswrapper    
-  ul.thumbnails
-    li.dayclassspan
-      .activity
-        .coverimg = image_tag "http://dummyimage.com/400x300/cfcfcf/ffffff.png"
-        .teacherimg = image_tag "http://dummyimage.com/150x150/cfcfcf/ffffff.png", class: "teacher_img"
-        h3#teacher_name  부경대 조재우 선생님
-        p#subject 비오는날, 해물파전먹으며, 안드로이드 배우기.
-    li.dayclassspan
-      .activity
-        .coverimg = image_tag "http://dummyimage.com/400x300/cfcfcf/ffffff.png"
-        .teacherimg = image_tag "http://dummyimage.com/150x150/cfcfcf/ffffff.png", class: "teacher_img"
-        h3#teacher_name  부경대 조재우 선생님
-        p#subject 비오는날, 해물파전먹으며, 안드로이드 배우기.
+#myCarousel.carousel.slide
+  .carousel-inner
+    .active.item
+      .banner
+        = image_tag "getstarted.png"
+    .item
+      .banner
+        = image_tag "slide2_3.png"
+    .item
+      .banner
+        = image_tag "slide3.png"
+    .item
+      .banner
+        = image_tag "columbia.png"
+  a.left.carousel-control href="#myCarousel" data-slide="prev" &lsaquo;
+  a.right.carousel-control href="#myCarousel" data-slide="next" &rsaquo;
+.hero-unit
+  .dayclasswrapper    
+    ul.thumbnails
+      - @dayclasses.each do |dayclass|
+        li.dayclassspan
+          .activity
+            = link_to dayclass do
+              .coverdate
+                .covertext
+                  = dayclass.created_at.strftime("%Y. %m. %d.")
+              .coverimg = image_tag dayclass.coverpic.url(:cover)
+              .teacherimg = image_tag dayclass.client.profile.url(:index_profile), class: "teacher_img"  
+              h3#teacher_name 
+                = dayclass.client.school
+                | ,&nbsp;
+                = dayclass.client.name
+              p#subject = dayclass.title
+              .line
+              p#place
+                | 장소 : 
+                = dayclass.place
+              p#rest
+                | 인원 : 
+                | 7명 남았습니다.

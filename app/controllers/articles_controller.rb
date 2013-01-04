@@ -11,11 +11,13 @@ class ArticlesController < ApplicationController
 	end
 
 	def new
-		@article = Article.new
+		@schoolinfo = Schoolinfo.find(params[:schoolinfo_id])
+		@article = @schoolinfo.articles.build(params[:article])
 	end
 
 	def create
-		@article = Article.new(params[:article])
+		@schoolinfo = Schoolinfo.find(params[:schoolinfo_id])
+		@article = @schoolinfo.articles.build(params[:article])
 		if @article.save
 			redirect_to @article
 		else

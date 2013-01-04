@@ -1,3 +1,54 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.articlebox{
+	
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	width: 900px;
+	height: 300px;
+	border: 1px solid #cfcfcf;
+
+	.left{
+		float: left;
+		width: 400px;
+	}
+	
+	.right{
+		float: right;
+		width: 500px;
+
+		p#date{
+			float: right;
+			margin: 10px 30px 10px 0;
+		}
+
+		h1#title{
+			margin: 10px;
+			font-size: 40;
+			margin-top: 30px;
+
+		}
+
+		p#contents{
+			margin: 60px 10px 0 10px;
+			font-size: 20;
+			line-height: 130%
+
+		}
+	}
+
+	a{
+		color: #000;
+	}
+
+	a:hover{
+		text-decoration: none;
+		color: #4aabbf;
+	}
+
+}
+
+///----------------------------------------------

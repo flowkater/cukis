@@ -13,13 +13,16 @@
 			= image_tag @schoolinfo.logochart
 	.schoolshow-divider
 	- @articles.each do |article|
-		= link_to article do
-			.article
-				.row
-					.span3
-						= image_tag "http://www.dummyimage.com/300x225/cfcfcf/fff", id: "articlethumb"
-					.span7
-						.article-head
-							h2#article-title = article.title
-							p#article-date = article.created_at
-						p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		.articlebox
+			= link_to article do
+				.left
+					= image_tag "artcleimg.PNG"
+			.right
+				p#date
+					= article.created_at
+				= link_to article do	
+					h1#title
+						= article.title
+				p#contents
+					= article.content_stip_tags
+					/| 컨텐츠 헤드 는36폰트로 본문은 24폰트 한덩어리는 다섯글자로 구성되었음 가로크기는 900px로 설정하였음 그림높이는 300px이고 가로세로비 4:3을가짐 줄간격36px 글자의수는 10^2자임

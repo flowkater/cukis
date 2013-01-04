@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121226072355) do
+ActiveRecord::Schema.define(:version => 20130103174245) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -55,21 +55,46 @@ ActiveRecord::Schema.define(:version => 20121226072355) do
     t.datetime "updated_at",                       :null => false
   end
 
+  create_table "attendships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "dayclass_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "attendships", ["dayclass_id"], :name => "index_attendships_on_dayclass_id"
+  add_index "attendships", ["user_id", "dayclass_id"], :name => "index_attendships_on_user_id_and_dayclass_id", :unique => true
+  add_index "attendships", ["user_id"], :name => "index_attendships_on_user_id"
+
   create_table "clients", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.string   "name",                   :default => "", :null => false
+    t.string   "school",                 :default => "", :null => false
+    t.string   "major"
+    t.string   "profile"
+    t.string   "phone"
+    t.string   "phone_first"
+    t.string   "phone_second"
+    t.string   "phone_third"
+    t.string   "gender"
+    t.date     "birthday"
+    t.boolean  "use_policy"
+    t.boolean  "personal_policy"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "authentication_token"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
 
+  add_index "clients", ["authentication_token"], :name => "index_clients_on_authentication_token", :unique => true
   add_index "clients", ["email"], :name => "index_clients_on_email", :unique => true
   add_index "clients", ["reset_password_token"], :name => "index_clients_on_reset_password_token", :unique => true
 
@@ -206,6 +231,10 @@ ActiveRecord::Schema.define(:version => 20121226072355) do
     t.string   "phone_third"
     t.string   "gender"
     t.date     "birthday"
+    t.boolean  "use_policy"
+    t.boolean  "personal_policy"
+    t.boolean  "student"
+    t.boolean  "parent"
     t.string   "gcm_regid"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          :default => 0

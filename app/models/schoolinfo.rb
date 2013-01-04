@@ -8,4 +8,6 @@ class Schoolinfo < ActiveRecord::Base
 	mount_uploader :logochart, LogochartUploader
 
 	has_many :articles, dependent: :destroy
+
+	has_many :clients
 end

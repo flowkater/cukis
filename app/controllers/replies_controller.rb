@@ -11,8 +11,8 @@ class RepliesController < ApplicationController
   end
 
   def create
-  	# @reply = @repliable.replies.new(params[:reply])
-    @reply = current_user.replies.build(params[:reply])
+  	@reply = @repliable.replies.new(params[:reply])
+    # @reply = current_user.replies.build(params[:reply])
   	if @reply.save
   		redirect_to @repliable
   	else

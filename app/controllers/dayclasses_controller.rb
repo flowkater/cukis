@@ -1,4 +1,7 @@
 class DayclassesController < ApplicationController
+
+	before_filter :authenticate_client!, only: [:new]
+
 	def index
 		@dayclasses = Dayclass.all
 	end
@@ -15,8 +18,8 @@ class DayclassesController < ApplicationController
 	end
 
 	def create
-		@dayclass = Dayclass.new(params[:dayclass])
-		if @dayclass
+		@dayclass = current_client.dayclasses.build(params[:dayclass])
+		if @dayclass.save
 			redirect_to @dayclass
 		else
 			redirect_to new_dayclass_path

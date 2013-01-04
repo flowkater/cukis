@@ -223,7 +223,8 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: "굴림", Gulim,"돋움",Dotum,Verdana,Arial,AppleGothic,sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;

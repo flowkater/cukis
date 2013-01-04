@@ -9,6 +9,14 @@
 	}
 	#span-logo{
 		margin-bottom: 10px;
+		a{
+			opacity:1.0;
+			filter:alpha(opacity=100);
+		}
+		a:hover{
+			opacity:0.4;
+			filter:alpha(opacity=40);
+		}
 
 		#school-logo-img{
 			margin-left: 5px;
@@ -40,6 +48,16 @@
 	#sclogo{
 		margin-left: 20px;
 	}
+}
+
+.bemento{
+	opacity:0.7;
+	filter:alpha(opacity=70);
+}
+
+.bemento:hover{
+	opacity:1.0;
+	filter:alpha(opacity=100);		
 }
 
 .schoolshow-divider{
@@ -139,3 +157,80 @@
 	}
 
 ///---------------------------------------------
+
+///--campuskids hightlight------------------
+
+.highlightarticle{
+	width: 1170px;
+	.head{
+		width: 900px;
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+
+		.coverimg{
+			width: 900px;
+		}
+		.covertitle{
+			
+			.title{
+				width: 400px;
+				height: 400px;
+				background-color:black;
+				opacity: 0.5;
+				z-index: 20;
+				margin-left: 470px;
+				margin-top: -430px;
+				border: 1px solid black;
+				
+				h2#title{
+					z-index :25;
+					color: white;
+					margin-top: 50px;
+					margin-left: 10px;
+					margin-right: 10px;
+				}
+				
+				.schoolinfo{
+					margin-top: -10px;
+					z-index: 30;
+					
+					.schoollogo{
+						width: 80px;
+						margin-left: 10px;
+						margin-top: -25px;
+						margin-bottom: 10px;
+						float:left;
+					}
+
+					.name{
+						margin-top: 210px;
+						//text-align: center;
+						margin-left: 110px;
+						font-size: 30;
+						
+						h2#schoolname{
+							z-index: 35;
+							color: white;
+						}
+					}
+				}
+			}
+		}
+
+	}
+
+	.body{
+		margin-top: 70px;
+		width: 900px;
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+	}
+}
+
+//-------------------------
+p#article-content{
+	font-size: 17px;
+}
+

@@ -9,6 +9,20 @@ class DeviseCreateClients < ActiveRecord::Migration
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
 
+      ## Information
+      t.string :name, null: false, default: ""
+      t.string :school, null: false, default: ""
+      t.string :major
+      t.string :profile # 프로필 이미지
+      t.string :phone
+      t.string :phone_first
+      t.string :phone_second
+      t.string :phone_third
+      t.string :gender
+      t.date :birthday
+      t.boolean :use_policy
+      t.boolean :personal_policy
+
       ## Rememberable
       t.datetime :remember_created_at
 
@@ -31,7 +45,7 @@ class DeviseCreateClients < ActiveRecord::Migration
       # t.datetime :locked_at
 
       ## Token authenticatable
-      # t.string :authentication_token
+      t.string :authentication_token
 
 
       t.timestamps
@@ -41,6 +55,6 @@ class DeviseCreateClients < ActiveRecord::Migration
     add_index :clients, :reset_password_token, :unique => true
     # add_index :clients, :confirmation_token,   :unique => true
     # add_index :clients, :unlock_token,         :unique => true
-    # add_index :clients, :authentication_token, :unique => true
+    add_index :clients, :authentication_token, :unique => true
   end
 end

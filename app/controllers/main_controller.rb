@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def home
-  	@postacts = Postact.all
+  	# @postacts = Postact.all
   end
 
   def teaching

@@ -5,13 +5,21 @@ h1 Day 클래스 개설하기
 			= simple_form_for @dayclass, html: { class: 'form-horizontal' } do |f|
 				.hero-unit#dayclass-hero
 					= f.input :title, label: "제목", input_html: {id: 'title-form-size'}
-					= f.input :content, label: "소개", input_html: { id: 'form-size-text'}
+					#notes-button.notes-bar style="width: 600px; margin-left: 100px"
+					.control-group.text.optional
+						label.text.optional.control-label for="notes" 소개
+						.controls
+							textarea.text.optional.form-size-text cols="40" id="notes" rows="20"
+					/ = f.input :content, label: "소개", input_html: { id: 'notes', class: "form-size-text"}
+					.notes-preview-subject 미리보기
+					#notes-preview.preview-box
+					= f.input :content, label: false, input_html: {id: "notes-output"}, as: :hidden
 				.hero-unit#dayclass-hero
 					.dayclass-fee
-						= f.input :fee, label: "수강료", input_html: {id: 'etc-form-size'}, as: :string, wrapper_html: {id: 'fee-form'}
+						= f.input :fee, label: "수강료", input_html: {id: 'etc-form-size'}, as: :string, wrapper_html: {id: 'fee-form'}, placeholder: "ex) 15,000 "
 						.tail-label 원 / 명
 					.dayclass-min
-						= f.input :minnumber, label: "인원", input_html: {id: 'etc-form-size'}, wrapper_html: {id: 'min-form'}
+						= f.input :minnumber, label: "인원", input_html: {id: 'etc-form-size'}, wrapper_html: {id: 'min-form'} 
 						.tail-label 최소
 					.dayclass-max
 						= f.input :maxnumber, label: false, input_html: {id: 'etc-form-size'},wrapper_html: {id: 'min-form'}
@@ -29,6 +37,7 @@ h1 Day 클래스 개설하기
 					= f.input :place, label: "장소" do
 						= f.input_field :place, id: 'etc-form-place'
 						= button_tag content_tag(:p, '검색'), type: 'button', class: 'btn btn-primary', id: 'place-button'
+					= f.input :coverpic, label: "메인사진"
 				.from-actions
 					= f.button :submit, "클래스 만들기", class: "btn btn-primary"
 		.span5#daylass-formhint

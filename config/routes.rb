@@ -21,15 +21,15 @@ Cukis::Application.routes.draw do
     end
   end
 
-  root to: "main#home"
+  root to: "dayclasses#index"
 
   #------------------------------------------------  
 
-  match "/teaching", to: "main#teaching"
-  match "/teacher", to:"main#teacher"
+  # match "/teaching", to: "main#teaching"
+  match "/wait", to:"main#wait"
   # match "/teamact", to:"main#teamact"
-  match "/campuskids", to:"main#campuskids"
-  match "/campuskids/school", to:"main#campuskids_school"
+  # match "/campuskids", to:"main#campuskids"
+  # match "/campuskids/school", to:"main#campuskids_school"
   
   #test 용 라우팅입니다. 테스트후 삭제해주세요.
 

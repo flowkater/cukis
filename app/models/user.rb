@@ -7,11 +7,17 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :phone,
-                 :nickname, :gcm_regid,:gender, :birthday, :phone_first, :phone_second, :phone_third
+                 :nickname, :gcm_regid,:gender, :birthday, :phone_first, :phone_second, :phone_third,
+                 :use_policy, :personal_policy
 
   # token 유저 생성시 생성, 기본 cookie 생성
   before_save :ensure_authentication_token, :combine_phone
 
+  validates :use_policy, acceptance: {accept: true}
+  validates :personal_policy, acceptance: {accept: true}
+
+  # validates :use_policy, acceptance: true
+  # validates :personal_policy, acceptance: true
 
   #----------------------------
   # like
@@ -19,6 +25,9 @@ class User < ActiveRecord::Base
   # comment
   has_many :comments, dependent: :destroy
   #----------------------------
+
+  has_many :attendships, dependent: :destroy
+  has_many :dayclasses, through: :attendships
 
   # reply
   has_many :replies, as: :repliable
