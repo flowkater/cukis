@@ -3,14 +3,18 @@ class DayclassesController < ApplicationController
 	before_filter :authenticate_client!, only: [:new]
 
 	def index
-		@dayclasses = Dayclass.all
+		@dayclasses = Dayclass.approve
 	end
 
 	def show
 		@dayclass = Dayclass.find(params[:id])
-		@repliable = @dayclass
-		@replies = @repliable.replies
-		@reply = Reply.new
+		if @dayclass.approve
+			@repliable = @dayclass
+			@replies = @repliable.replies
+			@reply = Reply.new
+		else
+			redirect_to root_path
+		end
 	end
 
 	def new

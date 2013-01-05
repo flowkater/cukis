@@ -1,4 +1,6 @@
 class Dayclass < ActiveRecord::Base
+	scope :approve, where(approve: true)
+
 	attr_accessible :title, :content, :fee, :minnumber, :maxnumber, :fromdate, :enddate,:fromtime, :endtime, :doc, :place, :approve, :coverpic
 	mount_uploader :coverpic, ImageUploader
 	has_many :replies, as: :repliable
