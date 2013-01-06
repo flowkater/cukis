@@ -18,4 +18,31 @@
 			.content
 				= @dayclass.content.html_safe
 		.span3#right
-			=image_tag "http://dummyimage.com/370x500/cfcfcf/fff"
+			.details
+				.attr
+					.img = image_tag "icons/date.png"
+					p#id 날짜: 
+					p#content 
+						= @dayclass.enddate
+				.attr
+					.img = image_tag "icons/time.png"	
+					p#id 시간: 
+					p#content = @dayclass.endtime.strftime("%p %l : %M")
+				.attr
+					.img = image_tag "icons/fee.png"		
+					p#id 비용: 
+					p#content = @dayclass.fee
+					p#unit &nbsp;원/명
+				.attr
+					.img = image_tag "icons/place.png"
+					p#id 장소: 
+					p#content = truncate(@dayclass.place, length: 12)
+				.attr
+					.img = image_tag "icons/member.png"
+					p#id 인원: 
+					p#content 3 
+					p#unit &nbsp;명 남았습니다.
+				.progress.progress-striped
+					.bar
+				= link_to "#" do
+					p.btn.btn-info#apply 신청하기 

@@ -1,0 +1,54 @@
+.regiclass
+	h1 클래스 신청하기
+	.classinfo	
+		h3 클래스 정보
+		table.table
+			tr#head
+				th 제목
+				th 수강료	
+				th 인원
+				th 총계
+			tr#body 
+				td#title 산업공학의 정수를 보여주마!
+				td#fee 30,000원
+				td#member 1
+				td#sum 
+					p 30,000원
+
+	.humaninfo
+		h3 신청인
+		table.table
+			tr#head
+				th 이름
+				th 이메일
+				th 전화번호
+			tr#body
+				td 박준영
+				td joon1050@gmail.com
+				td 010-4609-1925
+
+
+	.payinfo
+		h3 결제정보
+		table.table
+			tr#head
+				th 결제수단
+				th 신청인 이름
+				th 이메일
+				th 전화번호
+			tr#body
+				td
+					select.input-small
+						option 계좌이체 
+				td 
+					input.input-medium type="text" placeholder="입금인성명을 입력해주세요."
+				td 
+					input type="text" placeholder="example@example.com"
+				td
+					input type="text"  placeholder="010-1234-4321"
+
+		h4 계좌정보
+		p 
+		| 계좌번호: 078-154503-04-010 기업은행
+		p
+		|예금주 : 주식회사 쿠키스 

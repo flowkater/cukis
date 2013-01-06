@@ -1,6 +1,8 @@
 class SchoolinfosController < ApplicationController
 	def index
 		@schoolinfos = Schoolinfo.all
+		# @article = Article.spotlight.first
+		@article = Article.all.first
 	end
 
 	def show

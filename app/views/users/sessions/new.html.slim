@@ -1,18 +1,16 @@
 h2#head 로그인
 .session-new
-	.login-forms
-		.line
-		.login-image
-			= image_tag "loginimg.PNG",class: "centerimg"
-		h2#slogan CUKIS에 오신것을 환영합니다!
-		.line
+	.line
+	h2#slogan CUKIS에 오신것을 환영합니다!
 	= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal'}) do |f|
 		.form-inputs
-			= f.input :email, :required => false, :autofocus => true, input_html: {id: "login_input"}
-	    = f.input :password, :required => false, input_html: {id: "login_input"}
+			= f.input :email, :required => false, :autofocus => true, input_html: {id: "login_input"}, label: "이메일", placeholder: "ex) example@cukis.net"
+	    = f.input :password, :required => false, input_html: {id: "login_input"}, label: "패스워드", wrapper_html: { style: "margin-bottom:5px;"}
+	    .password-find style="margin-left:100px;font-size:12px;"
+	    	= link_to "비밀번호가 기억나지 않으세요?", new_password_path(resource_name)
+		.line-button style="margin-left:-300px; width:960px;"
 		.register
-			= link_to "회원이 아니에요.", new_registration_path(resource_name), class: "btn btn-info"
-		.factions style="margin-left: 240px"
-	   	= f.button :submit, "로그인", class: "btn btn-primary"
+			= link_to "회원가입", new_registration_path(resource_name), class: "btn btn-info btnregister"
+		.factions style="margin-left: 220px"
+	   	= f.button :submit, "로그인", class: "btn btn-primary btnlogin"
 
-/= render "devise/shared/links"

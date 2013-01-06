@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.slide-size{
+	width: 960px;
+	height: 361px;
+}
+
 .form-size-text{
 	width: 600px;
 	height: 200px;
@@ -16,7 +21,7 @@
 .preview-box{
 	background-color: #fff;
 	width: 590px;
-	min-height: 30px;
+	min-height: 20px;
 	margin-left: 100px;
 	padding-left: 10px;
 	border: 1px solid #cfcfcf;
@@ -41,23 +46,23 @@
 }
 
 #dayclass-hero{
-	padding: 30 10 10 30;
+	padding: 30px 10px 10px 30px;
 }
 
 #title-form-size{
 	width: 600px;
-	height: 30px;
+	height: 20px;
 }
 
 #etc-form-size{
-	height: 30px;
+	height: 20px;
 	width: 100px;
 	text-align: right;
 }
 
 #etc-form-date{
 	width: 100px;
-	height: 30px;
+	height: 20px;
 }
 
 .from-date{
@@ -143,7 +148,7 @@
 
 #etc-form-place{
 	width: 500px;
-	height: 30px;
+	height: 20px;
 }
 
 #place-button{
@@ -179,12 +184,13 @@
 		margin-left: 15px;
 
 		.coverdate{
+			padding: 0px 10px;
 			z-index: 10;
 			color: #fff;
 			font-weight: bold;
 			background-color: rgba(0, 0, 0, .5);
 			position: absolute;
-			margin-left: 295px;
+			margin-left: 195px;
 			margin-top: 5px;
 			font-size: 14px;
 			-webkit-border-radius: 5px;
@@ -240,18 +246,6 @@
 				margin-left: 10px;
 				z-index: 5;
 			}
-			p#place{
-				font-size: 14px;
-				margin-left: 10px;
-				z-index: 5;
-				margin-bottom: 0px;
-			}
-			p#rest{
-				font-size: 14px;
-				margin-left: 10px;
-				z-index: 5;
-				margin-bottom: 0px;
-			}
 			.line{
 				width: 100%;
 				height: 1px;
@@ -267,8 +261,14 @@
 		margin-left: auto;
 		margin-right: auto;
 
+	.content{
+		img{
+			width: 600px;
+		}
+	}
+
 	.span7#left{
-		width: 800px;
+		width: 656px;
 		//border: 1px solid black;
 		background-color: #ebebeb;
 
@@ -284,13 +284,13 @@
 				margin-top: 30px;
 				margin-bottom: 50px;
 				text-align: left;
-				font-size: 40;
+				font-size: 40px;
 			}
 
 		}
 
 		.teacher_name_tag{
-			width: 800px;
+			width: 656px;
 			float: right;
 			h1.title{
 				line-height :130%;
@@ -303,33 +303,33 @@
 			z-index: 20;
 			margin-left: 5%;
 			margin-top: -10%;
-			width: 200px;			
+			width: 164px;			
 			.teacherimg {
 				border: 7px solid white;
 			}
 		}
 
 		.name{
-			margin-top: -100px;
-			width: 500px;
-			height: 100px;
+			margin-top: -82px;
+			width: 410px;
+			height: 82px;
 			//border: 1px solid black;
 			float: right;
 
 			.schoollogo{
-				width: 100px;
+				width: 82px;
 				float:left;
 				//margin-top: -45px;
 			}
 			p#major{
-				margin-top: 10px;
-				margin-left: 130px;
-				font-size: 20;
+				margin-top: 8px;
+				margin-left: 106px;
+				font-size: 16px;
 			}
 			p#name{
-				margin-top: 30px;
-				margin-left: 130px;
-				font-size: 40;
+				margin-top: 24px;
+				margin-left: 106px;
+				font-size: 32px;
 				font-weight: bold;	
 			}
 		}
@@ -338,7 +338,7 @@
 			width: 90%;
 			margin-left: auto;
 			margin-right: auto;
-			margin-top: 30px;
+			margin-top: 25px;
 			display: block;
 			height: 2px;
 			background-color: white;
@@ -348,16 +348,80 @@
 		}
 
 		.content{
-			margin-top: 30px;
-			margin-bottom: 10px;
-			width: 750px;
+			margin-top: 25px;
+			margin-bottom: 8px;
+			width: 600px;
 			margin-left: 20px;
 		}
 
 	.span3#right{
-		margin-left: 0px;
-		width: 370px;
+		margin-left: 20px;
+		width: 240px;
 		border: 1px solid white;
+
+		p.btn.btn-info#apply{
+			margin-left: 20px;
+			font-size: 25px;
+			padding: 16px 40px;
+		}
+
+		.details{
+			padding: 10px 10px 10px 10px;
+			width: 240px;
+			background-color: #ebebeb;
+
+			.attr{
+				width: 240px;
+				height: 40px;
+				//border: 1px solid black;
+				.img{
+					margin-left: 20px;
+					float: left;
+				}
+				p#id{
+					float: left;
+					margin-left: 10px;
+					margin-right: 5px;
+					color: black;
+					font-weight: bold;
+				}
+				p#content{
+					color: black;
+					float: left;
+				}
+
+				p#unit{
+					color: black;
+				}
+				.divider{
+					margin-top: 10px;
+					width: 90%;
+					background-color: white;
+					margin-left: auto;
+					margin-right: auto;
+					display: block;
+				}
+			}
+			.attr2{
+				width: 240px;
+				height: 40px;
+				//border: 1px solid black;
+				
+				p#id{
+					float: left;
+					margin-left: 3px;
+					margin-right: 5px;
+					color: black;
+					width: 120px;
+				}
+				
+				.progress.progress-striped{
+					margin-top: 10px;
+					margin-left: 10px;
+					margin-bottom: 10px;
+				}
+			}
+		}
 	}
 }
 .dayclasswrapper{
@@ -371,5 +435,112 @@
 }
 
 .hero-unit#dayclass-unit{
-	padding: 30 30 30 30;
+	padding: 25px 25px 25px 25px;
+}
+.class-info{
+	font-size: 14px;
+	margin-top: 10px;
+	line-height: 140%;
+	.place{
+		overflow: hidden;
+	}
+	p#tt{
+		margin-left: 10px;
+		font-size: 14px;
+		font-weight: bold;
+		float: left;
+	}
+	p#rt{
+		margin-left: 10px;
+		font-size: 14px;
+		font-weight: bold;
+		float: left;
+	}
+}
+
+
+
+// 신청하기-------------------
+.regiclass{
+	.classinfo{
+		margin-top: 20px;
+		width: 940px;
+		background-color: #f4f5f7;
+		border: 1px solid #f4f5f7;
+		border-radius: 20px;
+		padding: 10 20 10 20;
+
+		table.table{
+
+			tr#head{
+				background-color: black;
+				
+				th{
+					color:white;
+				}
+
+			}
+
+			tr#body{
+				background-color: white;
+				td#sum{
+				color:red;
+				}
+			}					
+		}
+	}
+
+	.humaninfo{
+		margin-top: 20px;
+		width: 940px;
+		background-color: #f4f5f7;
+		border: 1px solid #f4f5f7;
+		border-radius: 20px;
+		padding: 10 20 10 20;
+
+		table.table{
+
+			tr#head{
+				background-color: black;
+				
+				th{
+					color:white;
+				}
+
+			}
+
+			tr#body{
+				background-color: white;
+			}					
+		}
+	}
+
+	.payinfo{
+		margin-top: 20px;
+		width: 940px;
+		background-color: #f4f5f7;
+		border: 1px solid #f4f5f7;
+		border-radius: 20px;
+		padding: 10px 20px 10px 20px;
+		margin-bottom: 20px;
+		table.table{
+
+			tr#head{
+				background-color: black;
+				
+				th{
+					color:white;
+				}
+			}
+			tr#body{
+				background-color: white;
+				
+				td{
+					input{
+						height: 20px;
+					}
+				}
+			}					
+		}
+	}	
 }

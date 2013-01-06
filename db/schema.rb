@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130103174245) do
+ActiveRecord::Schema.define(:version => 20130106061925) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -48,9 +48,11 @@ ActiveRecord::Schema.define(:version => 20130103174245) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
+    t.string   "coverpic"
     t.text     "content"
     t.integer  "schoolinfo_id"
     t.boolean  "approve",       :default => false
+    t.boolean  "spotlight"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
   end
@@ -58,8 +60,9 @@ ActiveRecord::Schema.define(:version => 20130103174245) do
   create_table "attendships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "dayclass_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "paid",        :default => 0
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   add_index "attendships", ["dayclass_id"], :name => "index_attendships_on_dayclass_id"
@@ -67,36 +70,9 @@ ActiveRecord::Schema.define(:version => 20130103174245) do
   add_index "attendships", ["user_id"], :name => "index_attendships_on_user_id"
 
   create_table "clients", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.string   "name",                   :default => "", :null => false
-    t.string   "school",                 :default => "", :null => false
-    t.string   "major"
-    t.string   "profile"
-    t.string   "phone"
-    t.string   "phone_first"
-    t.string   "phone_second"
-    t.string   "phone_third"
-    t.string   "gender"
-    t.date     "birthday"
-    t.boolean  "use_policy"
-    t.boolean  "personal_policy"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "authentication_token"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
-
-  add_index "clients", ["authentication_token"], :name => "index_clients_on_authentication_token", :unique => true
-  add_index "clients", ["email"], :name => "index_clients_on_email", :unique => true
-  add_index "clients", ["reset_password_token"], :name => "index_clients_on_reset_password_token", :unique => true
 
   create_table "comments", :force => true do |t|
     t.string   "content"
@@ -123,6 +99,13 @@ ActiveRecord::Schema.define(:version => 20130103174245) do
     t.boolean  "approve",    :default => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+  end
+
+  create_table "globalinfos", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "likes", :force => true do |t|
@@ -208,8 +191,9 @@ ActiveRecord::Schema.define(:version => 20130103174245) do
     t.string   "logoband"
     t.string   "logocircle"
     t.string   "logochart"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "approve",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "teamacts", :force => true do |t|
@@ -220,11 +204,15 @@ ActiveRecord::Schema.define(:version => 20130103174245) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
-    t.string   "nickname",               :default => "", :null => false
+    t.string   "type"
+    t.string   "name",                   :default => "",    :null => false
+    t.string   "profile"
+    t.string   "school"
+    t.string   "major"
     t.string   "phone"
     t.string   "phone_first"
     t.string   "phone_second"
@@ -233,8 +221,10 @@ ActiveRecord::Schema.define(:version => 20130103174245) do
     t.date     "birthday"
     t.boolean  "use_policy"
     t.boolean  "personal_policy"
-    t.boolean  "student"
-    t.boolean  "parent"
+    t.boolean  "is_student",             :default => false
+    t.boolean  "is_parent",              :default => false
+    t.boolean  "is_mento",               :default => false
+    t.integer  "membership"
     t.string   "gcm_regid"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",          :default => 0
@@ -242,14 +232,17 @@ ActiveRecord::Schema.define(:version => 20130103174245) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
     t.string   "authentication_token"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
-  add_index "users", ["nickname"], :name => "index_users_on_nickname", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end

@@ -8,6 +8,7 @@ class CreateSchoolinfos < ActiveRecord::Migration
       t.string :logoband #Band Image
       t.string :logocircle #Circle Logo Image
       t.string :logochart #Chart 
+      t.boolean :approve, default: false
 
       t.timestamps
     end

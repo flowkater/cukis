@@ -5,6 +5,8 @@ gem 'rails', '3.2.2'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# gem 'mailcatcher'
+
 # XMPP4r
 gem 'xmpp4r', '0.5'
 
@@ -25,6 +27,11 @@ gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook', '1.4.0'
 gem 'koala'
+
+##
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
 
 # Active Admin
 gem 'activeadmin'

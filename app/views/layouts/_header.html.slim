@@ -2,35 +2,34 @@ header.navbar.navbar-static-top.navbar-inverse
 	.navbar-inner.head
 		.container
 			= link_to root_path do
-				= image_tag "cukis_logo.png", size: "100x64"
-			ul.nav.pull-right
-				- unless user_signed_in?
-					.userlogin = link_to "로그인", user_session_path
-				/- if client_signed_in?
+				= image_tag "logo_100.png", class: "cukis-logo"
+			ul.nav.pull-right style="width:140px"
+				- if user_session
+					.dropdown#dropposition
+						= link_to '#', :id => "top-information", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
+							.drop-username 
+								= image_tag "http://dummyimage.com/30x30/cfcfcf/ffffff.png", class: "drop-userimage"
+								= current_user.name
+								= image_tag "triangle.PNG", class: "drop-arrow"		
+						ul.dropdown-menu
+							li = link_to '마이페이지', '#'
+							li.menu-divider
+							li = link_to "로그아웃", destroy_user_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
+				- elsif client_session
 					.dropdown#dropposition
 						= link_to '#', :id => "top-information", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
 							.drop-username 
 								= image_tag "http://dummyimage.com/30x30/cfcfcf/ffffff.png", class: "drop-userimage"
 								= current_client.name
-								= image_tag "triangle.PNG", class: "drop-arrow"
-						ul.dropdown-menu
-							li = link_to 'First', '#'
-							li = link_to 'Second', '#'
-							li.menu-divider
-							li = link_to "로그아웃", destroy_user_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
-
-				- else
-					.dropdown#dropposition
-						= link_to '#', :id => "top-information", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
-							.drop-username 
-								= image_tag "http://dummyimage.com/30x30/cfcfcf/ffffff.png", class: "drop-userimage"
-								= current_user.nickname
 								= image_tag "triangle.PNG", class: "drop-arrow"		
 						ul.dropdown-menu
-							li = link_to 'First', '#'
-							li = link_to 'Second', '#'
+							li = link_to '마이페이지', '#'
 							li.menu-divider
-							li = link_to "로그아웃", destroy_user_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
+							li = link_to "로그아웃", destroy_client_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
+				- else
+					.userlogin = link_to "로그인", prelogin_path
+					.userbar &nbsp;|&nbsp;
+					.userregister = link_to "회원가입", preregister_path
 			br
 			.line
 			ul.nav.tabfont
@@ -40,10 +39,10 @@ header.navbar.navbar-static-top.navbar-inverse
 					= link_to "학습멘토", wait_path
 				li 
 					= link_to "캠퍼스 키즈", schoolinfos_path
-				/li 
-					/= link_to "팀 액티비티", teamacts_path
 			ul.nav.pull-right
-				= link_to new_client_registration_path, class: "bemento" do
-					= image_tag "bemento.png", size: "43x43"
-				= link_to new_dayclass_path, class: "bemento" do
-					= image_tag "makeclass.png", size: "43x43"
+				- if !client_session && !user_session
+					= link_to new_client_registration_path, class: "bemento" do
+						= image_tag "bemento.png"
+				- if current_client #&& current_client.mento
+					= link_to new_dayclass_path, class: "bemento" do
+						= image_tag "makeclass.png"

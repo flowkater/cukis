@@ -24,7 +24,7 @@ class DayclassesController < ApplicationController
 	def create
 		@dayclass = current_client.dayclasses.build(params[:dayclass])
 		if @dayclass.save
-			redirect_to @dayclass
+			redirect_to success_dayclass_path(@dayclass)
 		else
 			redirect_to new_dayclass_path
 		end
@@ -47,5 +47,12 @@ class DayclassesController < ApplicationController
 		@dayclass = Dayclass.find(params[:id])
 		@dayclass.destroy
 		redirect_to dayclasses_path
+	end
+
+	def success
+		@dayclass = Dayclass.find(params[:id])
+		if @dayclass.approve
+			redirect_to @dayclass
+		end
 	end
 end

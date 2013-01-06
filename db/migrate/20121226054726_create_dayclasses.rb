@@ -3,7 +3,7 @@ class CreateDayclasses < ActiveRecord::Migration
     create_table :dayclasses do |t|
       t.string :title
       t.text :content
-      t.float :fee
+      t.integer :fee
       t.integer :minnumber
       t.integer :maxnumber
       t.date :fromdate

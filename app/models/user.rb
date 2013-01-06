@@ -1,14 +1,17 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
-  # :confirmable,
+  # ,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable
+         :recoverable, :rememberable, :trackable,
+         :validatable, :token_authenticatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :phone,
-                 :nickname, :gcm_regid,:gender, :birthday, :phone_first, :phone_second, :phone_third,
-                 :use_policy, :personal_policy
+                 :name, :gcm_regid,:gender, :birthday, :phone_first, :phone_second, :phone_third,
+                 :use_policy, :personal_policy, :school, :major, :profile
+
+  mount_uploader :profile, ImageUploader
 
   # token 유저 생성시 생성, 기본 cookie 생성
   before_save :ensure_authentication_token, :combine_phone

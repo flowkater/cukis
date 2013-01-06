@@ -10,6 +10,8 @@
  *
  *= require_self
  *= require 'wmd/wmd'
+ *= require bootstrap-datepicker
+ *= require bootstrap-timepicker
  *= require_tree .
 */
 
@@ -34,5 +36,10 @@
 
 .body-con { 
 	padding-top: 10px;
+}
+
+.cukis-logo{
+	width: 80px;
+	margin: 5px 0px 5px 10px;
 }
 

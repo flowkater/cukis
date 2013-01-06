@@ -10,7 +10,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :reset_password_sent_at
 
       ## Information
-      t.string :nickname, null: false, default: "" # 이름
+      t.string :type
+      t.string :name, null: false, default: "" # 이름
+      t.string :profile # 프로필 이미지
+      t.string :school # 학교
+      t.string :major # 전공
       t.string :phone # 전화번호
       t.string :phone_first
       t.string :phone_second
@@ -19,8 +23,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.date :birthday # 생일
       t.boolean :use_policy
       t.boolean :personal_policy
-      t.boolean :student
-      t.boolean :parent
+      t.boolean :is_student, default: false #학생?
+      t.boolean :is_parent, default: false #부모
+      t.boolean :is_mento, default: false #멘토
+      t.integer :membership # 0 1 2
 
       t.string :gcm_regid
 
@@ -35,10 +41,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :last_sign_in_ip
 
       ## Confirmable
-      # t.string   :confirmation_token
-      # t.datetime :confirmed_at
-      # t.datetime :confirmation_sent_at
-      # t.string   :unconfirmed_email # Only if using reconfirmable
+      t.string   :confirmation_token
+      t.datetime :confirmed_at
+      t.datetime :confirmation_sent_at
+      t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
       # t.integer  :failed_attempts, :default => 0 # Only if lock strategy is :failed_attempts
@@ -56,6 +62,5 @@ class DeviseCreateUsers < ActiveRecord::Migration
     # add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
     add_index :users, :authentication_token, unique: true
-    add_index :users, :nickname, unique: true
   end
 end

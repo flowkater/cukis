@@ -13,10 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require bootstrap-datepicker/core
+//= require bootstrap-timepicker
 //= require wmd/wmd
 //= require wmd/showdown
-
-$('.dropdown-toggle').dropdown()
 
 $(function(){
 	new WMDEditor({
@@ -27,3 +27,13 @@ $(function(){
 		helpLink: "http://daringfireball.net/projects/markdown/syntax",
 	});
 })
+
+$(document).ready(function() {
+	$('.dropdown-toggle').dropdown();
+
+	$('.carousel').carousel({
+		interval: 10000
+	});
+	$('.datepicker').datepicker({"format":"yyyy-mm-dd"});
+	$('.timepicker').timepicker();
+});

@@ -2,16 +2,16 @@
   .carousel-inner
     .active.item
       .banner
-        = image_tag "getstarted.png"
+        = image_tag "getstarted.png", class: "slide-size"
     .item
       .banner
-        = image_tag "slide2_3.png"
+        = image_tag "slide2_3.png", class: "slide-size"
     .item
       .banner
-        = image_tag "slide3.png"
+        = image_tag "slide3.png", class: "slide-size"
     .item
       .banner
-        = image_tag "columbia.png"
+        = image_tag "columbia.png", class: "slide-size"
   a.left.carousel-control href="#myCarousel" data-slide="prev" &lsaquo;
   a.right.carousel-control href="#myCarousel" data-slide="next" &rsaquo;
 .hero-unit#dayclass-unit
@@ -23,7 +23,9 @@
             = link_to dayclass do
               .coverdate
                 .covertext
-                  = dayclass.created_at.strftime("%Y. %m. %d.")
+                  = dayclass.enddate.strftime("%Y. %m. %d.")
+                  | &nbsp;
+                  = dayclass.endtime.strftime("%p %l : %M")
               .coverimg = image_tag dayclass.coverpic.url(:cover)
               .teacherimg = image_tag dayclass.client.profile.url(:index_profile), class: "teacher_img"  
               h3#teacher_name 
@@ -32,9 +34,12 @@
                 = dayclass.client.name
               p#subject = dayclass.title
               .line
-              p#place
-                | 장소 : 
-                = dayclass.place
-              p#rest
-                | 인원 : 
-                | 7명 남았습니다.
+              .class-info
+                .place
+                  p#tt 장소
+                  | &nbsp;:&nbsp;
+                  = dayclass.place
+                .rest
+                  p#rt 인원 
+                  | &nbsp;:&nbsp;
+                  | 7명 남았습니다.

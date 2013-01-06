@@ -161,25 +161,24 @@
 ///--campuskids hightlight------------------
 
 .highlightarticle{
-	.head{
-		width: 900px;
+	.head-highlight{
+		width: 960px;
 		margin-right: auto;
 		margin-left: auto;
 		display: block;
 
 		.coverimg{
-			width: 900px;
+			width: 960px;
 		}
 		.covertitle{
-			
 			.title{
 				width: 400px;
-				height: 400px;
+				height: 130px;
 				background-color:black;
 				opacity: 0.5;
 				z-index: 20;
-				margin-left: 470px;
-				margin-top: -430px;
+				margin-left: 530px;
+				margin-top: -150px;
 				border: 1px solid black;
 				
 				h2#title{
@@ -191,13 +190,13 @@
 				}
 				
 				.schoolinfo{
-					margin-top: -10px;
+					margin-top: -190px;
 					z-index: 30;
 					
 					.schoollogo{
 						width: 80px;
 						margin-left: 10px;
-						margin-top: -25px;
+						margin-top: 5px;
 						margin-bottom: 10px;
 						float:left;
 					}
@@ -207,8 +206,14 @@
 						//text-align: center;
 						margin-left: 110px;
 						font-size: 30;
+
+						h2#clientname{
+							z-index: 35;
+							color: white;
+						}
 						
 						h2#schoolname{
+							margin-top: 20px;
 							z-index: 35;
 							color: white;
 						}
@@ -216,20 +221,34 @@
 				}
 			}
 		}
-
 	}
 
-	.body{
-		margin-top: 70px;
-		width: 900px;
+	.body-highlight{
+		p#art{
+			margin-left: 5px;
+			margin-top: 10px;
+			font-size: 21px;
+			line-height: 130%;
+		}
+		.more{
+			text-align: right;
+			margin-right: 10px;
+			margin-bottom: 10px;
+		}
+		margin-top: 40px;
+		width: 960px;
 		margin-right: auto;
 		margin-left: auto;
 		display: block;
 	}
 }
 
+
 //-------------------------
 p#article-content{
 	font-size: 17px;
 }
 
+.span9#schoolinfo-title{
+	width: 800px;
+}

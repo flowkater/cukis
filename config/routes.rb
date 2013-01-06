@@ -23,17 +23,24 @@ Cukis::Application.routes.draw do
 
   root to: "dayclasses#index"
 
+
+  match "/wait", to:"main#wait"
+  match "/prelogin", to: "main#prelogin"
+  match "/preregister", to: "main#preregister"
+  match "/privacy", to: "main#privacy"
+  match "/agreement", to: "main#agreement"
+
   #------------------------------------------------  
+  match "/form", to: "main#form"
 
   # match "/teaching", to: "main#teaching"
-  match "/wait", to:"main#wait"
   # match "/teamact", to:"main#teamact"
   # match "/campuskids", to:"main#campuskids"
   # match "/campuskids/school", to:"main#campuskids_school"
   
   #test 용 라우팅입니다. 테스트후 삭제해주세요.
 
-  match "/test", to:"main#test" 
+  # match "/test", to:"main#test" 
 
   #------------------------------------------------ 
   ActiveAdmin.routes(self)
@@ -51,15 +58,18 @@ Cukis::Application.routes.draw do
   # end
 
   resources :dayclasses do
+    member do
+      get 'success'
+    end
     resources :replies
   end
 
-  resources :articles do
+  resources :articles, only: [:show] do
     resources :replies
   end
 
   resources :schoolinfos, only: [:index, :show] do
-    resources :articles
+    resources :articles, only: [:show]
     member do
       get 'stats'
     end
