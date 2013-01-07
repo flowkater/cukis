@@ -29,6 +29,8 @@ Cukis::Application.routes.draw do
   match "/preregister", to: "main#preregister"
   match "/privacy", to: "main#privacy"
   match "/agreement", to: "main#agreement"
+  match "/introduce", to: "main#introduce"
+  match "/question", to: "main#question"
 
   #------------------------------------------------  
   match "/form", to: "main#form"
