@@ -12,7 +12,7 @@
 		.articlebox
 			= link_to article do
 				.left
-					= image_tag article.coverpic, class: "coverpic"
+					= image_tag article.coverpic, class: "article-coverpic"
 			.right
 				p#date
 					= article.created_at.strftime("%Y. %m. %d.")
