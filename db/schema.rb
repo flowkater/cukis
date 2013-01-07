@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106061925) do
+ActiveRecord::Schema.define(:version => 20130106215501) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(:version => 20130106061925) do
   create_table "dayclasses", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.float    "fee"
+    t.integer  "fee"
     t.integer  "minnumber"
     t.integer  "maxnumber"
     t.date     "fromdate"
@@ -158,6 +158,13 @@ ActiveRecord::Schema.define(:version => 20130106061925) do
     t.datetime "updated_at",   :null => false
   end
 
+  create_table "questions", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "relationships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "client_id"
@@ -185,6 +192,7 @@ ActiveRecord::Schema.define(:version => 20130106061925) do
 
   create_table "schoolinfos", :force => true do |t|
     t.string   "maintitle"
+    t.string   "shorttitle"
     t.string   "subtitle"
     t.text     "content"
     t.string   "logo"
