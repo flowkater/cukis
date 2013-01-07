@@ -1,6 +1,6 @@
 class Schoolinfo < ActiveRecord::Base
 	attr_accessible :maintitle, :subtitle, :content, :logo, :logoband, :logocircle, :logochart,
-									:approve
+									:approve, :shorttitle
 
 	# Image Uploader
 	mount_uploader :logo, LogoUploader	

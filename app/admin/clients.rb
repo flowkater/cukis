@@ -3,6 +3,6 @@ ActiveAdmin.register Client do
 		f.inputs "Check Authorization" do
 			f.input :is_mento
 		end
-		f.buttons
+		f.button
 	end  
 end
