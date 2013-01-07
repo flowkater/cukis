@@ -58,6 +58,10 @@ Cukis::Application.routes.draw do
   # end
 
   resources :dayclasses do
+    collection do
+      get 'waitmento'
+    end
+
     member do
       get 'success'
     end

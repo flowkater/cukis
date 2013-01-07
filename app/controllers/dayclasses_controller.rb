@@ -18,7 +18,11 @@ class DayclassesController < ApplicationController
 	end
 
 	def new
-		@dayclass = Dayclass.new
+		if current_client.is_mento
+			@dayclass = Dayclass.new
+		else
+			redirect_to waitmento_dayclasses_path
+		end
 	end
 
 	def create
@@ -53,6 +57,12 @@ class DayclassesController < ApplicationController
 		@dayclass = Dayclass.find(params[:id])
 		if @dayclass.approve
 			redirect_to @dayclass
+		end
+	end
+
+	def waitmento
+		if current_client.is_mento
+			redirect_to new_dayclass_path
 		end
 	end
 end
