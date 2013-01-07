@@ -2,6 +2,7 @@ class CreateSchoolinfos < ActiveRecord::Migration
   def change
     create_table :schoolinfos do |t|
       t.string :maintitle #main Title
+      t.string :shorttitle #short Title
       t.string :subtitle #sub Title
       t.text :content #content
       t.string :logo #wide Image

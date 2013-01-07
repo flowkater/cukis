@@ -9,8 +9,9 @@ html
 		= javascript_include_tag "application"
 		= csrf_meta_tags
 	body
-		= notice
 		= render 'layouts/header'
 		.container.body-con
+			- if notice
+				.alert.alert-info = notice
 			= yield
 		= render 'layouts/footer'

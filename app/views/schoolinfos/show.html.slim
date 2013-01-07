@@ -12,10 +12,10 @@
 		.articlebox
 			= link_to article do
 				.left
-					= image_tag "artcleimg.PNG"
+					= image_tag article.coverpic
 			.right
 				p#date
-					= article.created_at
+					= article.created_at.strftime("%Y. %m. %d.")
 				= link_to article do	
 					h1#title
 						= article.title

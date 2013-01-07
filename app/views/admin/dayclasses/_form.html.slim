@@ -1,0 +1,23 @@
+= simple_form_for [:admin, @dayclass] do |f|
+	= f.input :title
+	= f.input :fee
+	= f.input :minnumber
+	= f.input :maxnumber
+	= f.input :fromdate
+	= f.input :enddate
+	= f.input :fromtime
+	= f.input :endtime
+	= f.input :doc
+	= f.input :place
+	= f.input :coverpic
+	= f.input :client_id
+	= f.input :approve
+	#notes-button.notes-bar
+	.control-group.text.optional
+		label.text.optional.control-label for="notes"
+		.controls
+			textarea.text.optional.form-size-text cols="40" id="notes" rows="20"
+	= f.input :content
+	.notes-preview-subject 미리보기
+	#notes-preview.preview-box
+	= f.button :submit

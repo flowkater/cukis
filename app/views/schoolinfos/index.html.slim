@@ -1,20 +1,19 @@
 .highlightarticle
 	.head-highlight
-		/.coverimg = image_tag @article.coverpic
-		.coverimg = image_tag "http://dummyimage.com/960x480/cfcfcf/fff.png"
+		.coverimg = image_tag @article.coverpic
+		/ .coverimg = image_tag "http://dummyimage.com/960x480/cfcfcf/fff.png"
 		.covertitle
 			.title
 				.schoolinfo
 					.schoollogo =image_tag "jen/berkeley.PNG"
 					.name
-						h2#schoolname UC Berkeley
-						h2#clientname 김정현
+						h2#schoolname = @article.schoolinfo.maintitle
 	.body-highlight		
 		.contents#spotlight-article
-			/h1#title = @article.title
-			/p#art 
+			h1#title = @article.title
+			p#art 
 				= truncate(@article.content_strip_tags, length: 500)
-			/.more = link_to "더보기>>", @article
+			.more = link_to "더보기>>", @article
 		.divider
 ul.thumbnails#thumb-schoollogo
   - @schoolinfos.each do |schoolinfo|
