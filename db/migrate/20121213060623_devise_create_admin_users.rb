@@ -7,7 +7,8 @@ class DeviseCreateAdminUsers < ActiveRecord::Migration
   def migrate(direction)
     super
     # Create a default user
-    AdminUser.create!(:email => 'help@cukis.net', :password => 'znzltmRkwkepvmzhs!!', :password_confirmation => 'znzltmRkwkepvmzhs!!') if direction == :up
+    # AdminUser.create!(:email => 'help@cukis.net', :password => 'znzltmRkwkepvmzhs!!', :password_confirmation => 'znzltmRkwkepvmzhs!!') if direction == :up
+    AdminUser.create!(:email => 'help@cukis.net', :password => 'znzltm10', :password_confirmation => 'znzltm10') if direction == :up
   end
 
   def change
