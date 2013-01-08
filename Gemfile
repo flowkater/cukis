@@ -66,21 +66,21 @@ gem 'dotiw', :git => 'https://github.com/ChoJaewoo/dotiw.git'
 # Sanitize
 gem 'sanitize'
 
+gem 'bootstrap-sass', '~> 2.2.2.0'
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
+gem 'bootstrap-timepicker-rails', :require => 'bootstrap-timepicker-rails',
+                              :git => 'git://github.com/tispratik/bootstrap-timepicker-rails.git'
+gem 'sass-rails',   '~> 3.2.3'
+  
+gem 'coffee-rails', '~> 3.2.1'
+
+gem 'therubyracer'
+gem 'execjs'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'bootstrap-sass', '~> 2.2.2.0'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
-                              :git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
-  gem 'bootstrap-timepicker-rails', :require => 'bootstrap-timepicker-rails',
-                              :git => 'git://github.com/tispratik/bootstrap-timepicker-rails.git'
-
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer'
-  gem 'execjs'
-
   gem 'uglifier', '>= 1.0.3'
 end
 
