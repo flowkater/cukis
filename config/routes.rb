@@ -23,7 +23,6 @@ Cukis::Application.routes.draw do
 
   root to: "dayclasses#index"
 
-
   match "/wait", to:"main#wait"
   match "/prelogin", to: "main#prelogin"
   match "/preregister", to: "main#preregister"
@@ -32,19 +31,6 @@ Cukis::Application.routes.draw do
   match "/introduce", to: "main#introduce"
   match "/question", to: "main#question"
 
-  #------------------------------------------------  
-  match "/form", to: "main#form"
-
-  # match "/teaching", to: "main#teaching"
-  # match "/teamact", to:"main#teamact"
-  # match "/campuskids", to:"main#campuskids"
-  # match "/campuskids/school", to:"main#campuskids_school"
-  
-  #test 용 라우팅입니다. 테스트후 삭제해주세요.
-
-  # match "/test", to:"main#test" 
-
-  #------------------------------------------------ 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
