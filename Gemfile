@@ -72,7 +72,6 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',
 gem 'bootstrap-timepicker-rails', :require => 'bootstrap-timepicker-rails',
                               :git => 'git://github.com/tispratik/bootstrap-timepicker-rails.git'
 gem 'sass-rails',   '~> 3.2.3'
-  
 gem 'coffee-rails', '~> 3.2.1'
 
 gem 'therubyracer'
@@ -90,11 +89,10 @@ end
 
 group :development do
 	gem 'thin'
+	gem 'sqlite3'
 	# gem 'better_errors'
 	gem 'binding_of_caller'
 end
-
-gem 'sqlite3'
 
 gem 'jquery-rails'
 
