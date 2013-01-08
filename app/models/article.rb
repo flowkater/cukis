@@ -12,6 +12,5 @@ class Article < ActiveRecord::Base
 	def content_strip_tags
 		content = Sanitize.clean(self.content)
 		content.gsub(/(\[)(photo-url:")(\D*)("\])/, ' ')
-		content
 	end
 end
