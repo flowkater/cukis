@@ -85,7 +85,7 @@ group :assets do
 end
 
 group :production do
-  gem 'activerecord-mysql2-adapter'
+  # gem 'activerecord-mysql2-adapter'
   gem 'mysql2'
 end
 

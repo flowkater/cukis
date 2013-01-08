@@ -27,8 +27,7 @@ ssh_options[:forward_agent] = true
 set :default_environment, { "PATH" => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv/versions/1.9.3-p125/bin:$HOME/.rbenv/versions/1.9.3-p125/lib/ruby/gems/1.9.1/gems:$PATH"}
 ssh_options[:keys] = ["/home/kater102/.aws/cukis0107.pem"]
 
-# after "deploy", "deploy:cleanup"
-before "deploy:restart", "deploy:bundle_gems"
+after "deploy", "deploy:cleanup"
 before "deploy:start", "deploy:db_migrate"
 
 namespace :deploy do
