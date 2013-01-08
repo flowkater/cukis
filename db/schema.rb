@@ -60,9 +60,12 @@ ActiveRecord::Schema.define(:version => 20130106215501) do
   create_table "attendships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "dayclass_id"
-    t.integer  "paid",        :default => 0
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.string   "sender"
+    t.string   "sender_email"
+    t.string   "sender_phone"
+    t.integer  "paid",         :default => 0
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   add_index "attendships", ["dayclass_id"], :name => "index_attendships_on_dayclass_id"

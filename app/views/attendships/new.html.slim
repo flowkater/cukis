@@ -1,0 +1,60 @@
+.regiclass
+	h1 클래스 신청하기
+	.classinfo	
+		h3 클래스 정보
+		table.table
+			tr#head
+				th 제목
+				th 수강료	
+				th 인원
+				th 총계
+			tr#body 
+				td#title = @dayclass.title
+				td#fee 
+					= @dayclass.fee
+					| &nbsp;원
+				td#member 1
+				td#sum 
+					p 
+						= @dayclass.fee 
+						| &nbsp;원
+
+	.humaninfo
+		h3 신청인
+		table.table
+			tr#head
+				th 이름
+				th 이메일
+				th 전화번호
+			tr#body
+				td = current_user.name
+				td = current_user.email
+				td = current_user.phone
+
+	.payinfo
+		h3 결제정보
+		table.table
+			tr#head
+				th 결제수단
+				th 신청인 이름
+				th 이메일
+				th 전화번호
+			tr#body
+				td
+					select.input-small
+						option 계좌이체 
+				= simple_form_for [@dayclass ,@attendship], html: {class: 'form-horizontal'} do |f|
+					td 
+						= f.input :sender, placeholder: "입금인 성명을 입력해주세요.", label: false
+					td 
+						= f.input :sender_email, placeholder: "example@cukis.net", label: false
+					td
+						= f.input :sender_phone, placeholder: "010-1234-4321", label: false
+					br
+					= f.button :submit, "신청하기", class: "btn btn-primary"
+
+		h4 계좌정보
+		p 
+		| 계좌번호: 078-154503-04-010 기업은행
+		p
+		|예금주 : 주식회사 쿠키스 

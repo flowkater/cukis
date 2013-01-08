@@ -40,9 +40,8 @@
 				.attr
 					.img = image_tag "icons/member.png"
 					p#id 인원: 
-					p#content 3 
-					p#unit &nbsp;명 남았습니다.
+					= @dayclass.rest_people_show.html_safe 
 				.progress.progress-striped
 					.bar
-				= link_to form_path do
+				= link_to new_dayclass_attendship_path(@dayclass) do
 					p.btn.btn-info#apply 신청하기

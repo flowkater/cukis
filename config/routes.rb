@@ -52,14 +52,17 @@ Cukis::Application.routes.draw do
   devise_for :clients, path_names: {sign_in: 'login', sign_out: 'logout'}
 
   devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
+  resources :users, only: [:show]
 
   resources :postacts
 
-  # resources :teamacts do
-    # resources :replies
-  # end
-
   resources :dayclasses do
+    resources :replies
+    resources :attendships, only: [:new, :create, :destroy] do
+      collection do
+        get 'success'
+      end
+    end
     collection do
       get 'waitmento'
     end
@@ -67,7 +70,6 @@ Cukis::Application.routes.draw do
     member do
       get 'success'
     end
-    resources :replies
   end
 
   resources :articles, only: [:show] do

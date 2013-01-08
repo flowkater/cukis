@@ -1,4 +1,4 @@
 p
-  | Welcome #{@resource.email}!
-p You can confirm your account email through the link below:
-p= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token)
+  | 환영합니다, #{@resource.name} 님!
+p 아래의 링크를 눌러 계정을 활성화 해주세요.
+p = link_to '계정활성화 하기', confirmation_url(@resource, confirmation_token: @resource.confirmation_token)

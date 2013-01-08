@@ -41,6 +41,10 @@ class User < ActiveRecord::Base
     self.phone = phone_first + phone_second + phone_third
   end
 
+  def find_class(dayclass_id)
+    attendships.collect{|attendship| attendship if attendship.dayclass_id == dayclass_id}
+  end
+
   # # email require
   # def email_required?
   #   super && phone.blank?

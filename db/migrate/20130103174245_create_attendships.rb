@@ -3,6 +3,9 @@ class CreateAttendships < ActiveRecord::Migration
     create_table :attendships do |t|
       t.integer :user_id
       t.integer :dayclass_id
+      t.string :sender
+      t.string :sender_email
+      t.string :sender_phone
       t.integer :paid, default: 0 # 0 - unpaid, 1 - paid, 2 - etc
 
       t.timestamps

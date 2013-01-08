@@ -458,8 +458,6 @@
 	}
 }
 
-
-
 // 신청하기-------------------
 .regiclass{
 	.classinfo{
@@ -468,7 +466,7 @@
 		background-color: #f4f5f7;
 		border: 1px solid #f4f5f7;
 		border-radius: 20px;
-		padding: 10 20 10 20;
+		padding: 10px 20px;
 
 		table.table{
 
@@ -496,19 +494,15 @@
 		background-color: #f4f5f7;
 		border: 1px solid #f4f5f7;
 		border-radius: 20px;
-		padding: 10 20 10 20;
+		padding: 10px 20px;
 
 		table.table{
-
 			tr#head{
 				background-color: black;
-				
 				th{
 					color:white;
 				}
-
 			}
-
 			tr#body{
 				background-color: white;
 			}					
@@ -524,17 +518,14 @@
 		padding: 10px 20px 10px 20px;
 		margin-bottom: 20px;
 		table.table{
-
 			tr#head{
 				background-color: black;
-				
 				th{
 					color:white;
 				}
 			}
 			tr#body{
 				background-color: white;
-				
 				td{
 					input{
 						height: 20px;
