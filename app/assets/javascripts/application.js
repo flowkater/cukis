@@ -32,7 +32,7 @@ $(document).ready(function() {
 	$('.dropdown-toggle').dropdown();
 
 	$('.carousel').carousel({
-		interval: 10000
+		interval: 8000
 	});
 	$('.datepicker').datepicker({"format":"yyyy-mm-dd"});
 	$('.timepicker').timepicker();
