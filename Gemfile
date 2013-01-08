@@ -90,7 +90,6 @@ group :production do
 end
 
 group :development do
-  gem 'activerecord-sqlite3-adapter'
 	gem 'sqlite3'
 	gem 'thin'
 	# gem 'better_errors'
