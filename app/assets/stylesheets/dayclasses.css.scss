@@ -281,70 +281,67 @@
 			//z-index:2;
 			
 			h1.title{
-				margin-top: 30px;
-				margin-bottom: 50px;
-				text-align: left;
-				font-size: 40px;
+					margin-top: 30px;
+					margin-bottom: 50px;
+					text-align: left;
+					font-size: 40px;
+				}
 			}
 
-		}
-
-		.teacher_name_tag{
-			width: 656px;
-			float: right;
-			h1.title{
-				line-height :130%;
-				margin-left: 20px;
-				margin-right:20px;
+			.teacher_name_tag{
+				width: 656px;
+				float: right;
+				h1.title{
+					line-height :130%;
+					margin-left: 20px;
+					margin-right:20px;
+				}
 			}
-		}
 
-		.teacher_img {
-			z-index: 20;
-			margin-left: 5%;
-			margin-top: -10%;
-			width: 164px;			
-			.teacherimg {
-				border: 7px solid white;
+			.teacher_img {
+				z-index: 20;
+				margin-left: 5%;
+				margin-top: -10%;
+				width: 164px;			
+				.teacherimg {
+					border: 7px solid white;
+				}
 			}
-		}
 
-		.name{
-			margin-top: -82px;
-			width: 410px;
-			height: 82px;
-			//border: 1px solid black;
-			float: right;
+			.name{
+				margin-top: -82px;
+				width: 410px;
+				height: 82px;
+				//border: 1px solid black;
+				float: right;
 
-			.schoollogo{
-				width: 82px;
-				float:left;
-				//margin-top: -45px;
+				.schoollogo{
+					width: 82px;
+					float:left;
+					//margin-top: -45px;
+				}
+				p#major{
+					margin-top: 8px;
+					margin-left: 106px;
+					font-size: 16px;
+				}
+				p#name{
+					margin-top: 24px;
+					margin-left: 106px;
+					font-size: 32px;
+					font-weight: bold;	
+				}
 			}
-			p#major{
-				margin-top: 8px;
-				margin-left: 106px;
-				font-size: 16px;
-			}
-			p#name{
-				margin-top: 24px;
-				margin-left: 106px;
-				font-size: 32px;
-				font-weight: bold;	
-			}
-		}
 
-		.line {
-			width: 90%;
-			margin-left: auto;
-			margin-right: auto;
-			margin-top: 25px;
-			display: block;
-			height: 2px;
-			background-color: white;
-		}
-
-		
+			.line {
+				width: 90%;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 25px;
+				display: block;
+				height: 2px;
+				background-color: white;
+			}
 		}
 
 		.content{

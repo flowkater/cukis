@@ -1,6 +1,6 @@
-.container-fluid#wrapper
+.container#article-wrapper
 	.row-fluid#wrapper
-		.span7#left
+		.span12#article-show
 			.profile	
 				.cover_pic
 					=image_tag @article.coverpic.url(:show_cover)
@@ -10,4 +10,3 @@
 				h1.title = @article.title
 			.content
 				= @article.content.html_safe
-		.span3#right
