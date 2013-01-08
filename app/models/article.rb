@@ -10,6 +10,7 @@ class Article < ActiveRecord::Base
 	belongs_to :schoolinfo
 
 	def content_strip_tags
-		Sanitize.clean(content)		
+		content = Sanitize.clean(content)
+		content.gsub(/(<\[)(photo-url:")(\D*)("\]>)/, ' ')		
 	end
 end
