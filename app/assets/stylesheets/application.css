@@ -14,32 +14,3 @@
  *= require bootstrap-timepicker
  *= require_tree .
 */
-
-@import "bootstrap";
-
-.form-horizontal .control-label{
-	width: 100px;
-	text-align: left;
-}
-
-.form-horizontal .controls{
-	margin-left: 100px;
-}
-
-.container{
-	width: 960px;
-}
-
-.navbar .container{
-	width: 960px;
-}
-
-.body-con { 
-	padding-top: 10px;
-}
-
-.cukis-logo{
-	width: 80px;
-	margin: 5px 0px 5px 10px;
-}
-
