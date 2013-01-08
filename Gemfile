@@ -57,6 +57,9 @@ gem 'carrierwave'
 gem 'delayed_job_active_record'
 gem 'daemon'
 
+#mysql-activerecord
+gem install activerecord-mysql2-adapter
+
 # Dotiw
 gem 'dotiw', :git => 'https://github.com/ChoJaewoo/dotiw.git'
 
@@ -82,6 +85,7 @@ group :assets do
 end
 
 group :production do
+  gem 'mysql2'
 end
 
 group :development do

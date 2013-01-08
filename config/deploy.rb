@@ -6,18 +6,25 @@ set :application, "cukis"
 set :scm, :git
 set :repository, "git@github.com:ChoJaewoo/cukis.git"
 set :branch, "master"
+set :scm_passphrase, "chjw102"
 
-role :web, "54.248.81.6"     # Your HTTP server, Apache/etc
-role :app, "54.248.81.6"     # This may be the same as your `Web` server
-role :db,  "54.248.81.6", :primary => true # This is where Rails migrations will run
+set :eip, "54.248.81.6"
+
+role :web, eip     # Your HTTP server, Apache/etc
+role :app, eip     # This may be the same as your `Web` server
+role :db,  eip, :primary => true # This is where Rails migrations will run
 
 set :user, "ubuntu"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :rails_env, "production"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
+
+set :default_environment, { "PATH" => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.rbenv/versions/1.9.3-p125/bin:$HOME/.rbenv/versions/1.9.3-p125/lib/ruby/gems/1.9.1/gems:$PATH"}
+ssh_options[:keys] = ["/home/kater102/.aws/cukis0107.pem"]
 
 after "deploy", "deploy:cleanup"
 
