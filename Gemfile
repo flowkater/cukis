@@ -58,7 +58,7 @@ gem 'delayed_job_active_record'
 gem 'daemon'
 
 #mysql-activerecord
-gem install activerecord-mysql2-adapter
+gem 'activerecord-mysql2-adapter'
 
 # Dotiw
 gem 'dotiw', :git => 'https://github.com/ChoJaewoo/dotiw.git'
