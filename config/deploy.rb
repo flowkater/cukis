@@ -18,6 +18,7 @@ set :user, "ubuntu"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :keep_releases, 5
 set :rails_env, "production"
 
 default_run_options[:pty] = true
@@ -34,6 +35,14 @@ namespace :deploy do
     task command, roles: :app, except: {no_release: true} do
       run "/etc/init.d/unicorn_#{application} #{command}"
     end
+  end
+
+  task :db_migrate do
+    run "cd #{deploy_to}/current && bundle exec rake db:migrate RAILS_ENV=production"
+  end
+
+  task :db_drop do
+    run "cd #{deploy_to}/current && bundle exec rake db:drop RAILS_ENV=production"
   end
 
   task :setup_config, roles: :app do
