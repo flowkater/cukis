@@ -49,7 +49,8 @@ Cukis::Application.routes.draw do
   match "/session_new", to:"main#session_new"
   match "/loginselection", to:"main#login_selection"
   match "/hovertest", to:"main#hovertest"
-
+  match "/payme", to:"main#payme"
+  match "/testwait", to:"main#bemento"
 
   #test 용 라우팅입니다. 테스트후 삭제해주세요.
 
