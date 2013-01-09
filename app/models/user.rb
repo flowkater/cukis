@@ -26,7 +26,8 @@ class User < ActiveRecord::Base
   validates :name, presence: {message: "이름을 입력해주세요."}
   validates :gender, presence: {message: "성별을 선택해주세요."}
   validates :birthday, presence: {message: "생년월일을 입력해주세요."}
-  validates :phone, presence: {message: "전화번호를 입력해주세요."}
+  validates :phone_second, presence: {message: "전화번호를 입력해주세요."}
+  validates :phone_third, presence: {message: "전화번호를 입력해주세요."}
 
   # validates :use_policy, acceptance: true
   # validates :personal_policy, acceptance: true
