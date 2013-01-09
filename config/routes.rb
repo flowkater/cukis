@@ -36,6 +36,7 @@ Cukis::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   devise_for :clients, path_names: {sign_in: 'login', sign_out: 'logout'}
+  resources :clients, only: [:show]
 
   devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
   resources :users, only: [:show]

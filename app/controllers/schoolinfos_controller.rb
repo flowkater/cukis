@@ -1,6 +1,6 @@
 class SchoolinfosController < ApplicationController
 	def index
-		@schoolinfos = Schoolinfo.all
+		@schoolinfos = Schoolinfo.approve
 		@article = Article.spotlight.first
 	end
 

@@ -20,6 +20,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 set :keep_releases, 5
 set :rails_env, "production"
+set :normalize_asset_timestamps, false
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
