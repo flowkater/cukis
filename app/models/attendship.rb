@@ -1,5 +1,5 @@
 class Attendship < ActiveRecord::Base
-	attr_accessible :user_id, :dayclass_id, :sender, :sender_phone, :sender_email
+	attr_accessible :user_id, :dayclass_id, :sender, :sender_phone, :sender_email, :paid
 
 	belongs_to :user
 	belongs_to :dayclass

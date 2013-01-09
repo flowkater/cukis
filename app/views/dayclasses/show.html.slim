@@ -36,12 +36,14 @@
 				.attr
 					.img = image_tag "icons/place.png"
 					p#id 장소: 
-					p#content = truncate(@dayclass.place, length: 12)
+					p#content = link_to truncate(@dayclass.place, length: 12), "https://maps.google.com/maps?q=#{ @dayclass.place }"
 				.attr
 					.img = image_tag "icons/member.png"
 					p#id 인원: 
 					= @dayclass.rest_people_show.html_safe 
-				.progress.progress-striped
-					.bar
-				= link_to new_dayclass_attendship_path(@dayclass) do
-					p.btn.btn-info#apply 신청하기
+				.progress.progress-striped.active
+					.bar style="width: #{@dayclass.rest_people_ratio}%"
+				- if (current_user && current_user.find_class(@dayclass.id)) || current_client
+				- else
+					= link_to new_dayclass_attendship_path(@dayclass) do
+						p.btn.btn-info#apply 신청하기

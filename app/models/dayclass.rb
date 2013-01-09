@@ -13,7 +13,7 @@ class Dayclass < ActiveRecord::Base
 
 	def rest_people_show
 		people = rest_people
-		if people == 0
+		if people == 0 || people < 0
 			'<p id="content">마감되었습니다.</p>'
 		else
 			"<p id='content'>#{people}<p id='unit'> 명 남았습니다.</p></p>"
@@ -22,5 +22,23 @@ class Dayclass < ActiveRecord::Base
 
 	def rest_people
 		maxnumber - attendships.size
+	end
+
+	def rest_people_ratio
+		maxnumber = self.maxnumber * 1.0
+		if attendships.size <= maxnumber
+			(attendships.size / maxnumber) * 100 
+		end
+	end
+
+	def attendship_status(user_id)
+		paid = attendships.select {|a| a.user_id == user_id}.first.paid
+		if paid == 0
+			"입금 대기중"
+		elsif paid == 1
+			"입금 완료"
+		else
+			"결제 도중 오류가 발생했습니다."
+		end
 	end
 end

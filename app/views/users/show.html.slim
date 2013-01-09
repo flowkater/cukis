@@ -1,0 +1,66 @@
+.mypage
+	ul.nav.nav-tabs#myTab
+		li.active.customli
+			= link_to "#mycukis", data: {toggle: "tab"} do
+				| 마이쿠키스
+		li.customli
+			= link_to "#account", data: {toggle: "tab"} do
+				| 계정관리
+		li.customli
+			= link_to "#history", data: {toggle: "tab"} do
+				| 결제기록
+	.tab-content
+		.tab-pane.active#mycukis
+			.hero-unit#tab-hero
+				label 
+					h3 내가 참여한 액티비티
+				table.table.table-hover
+			  		thead
+			    		tr
+				      th  제목
+				      th  날짜
+				      th  선생님
+			  		tbody
+		  			- @dayclasses.each do |dayclass|
+			    		tr
+			    		td = dayclass.title
+			    		td = dayclass.enddate
+			    		td 
+			    			= dayclass.client.name
+			    			| &nbsp;선생님
+		.tab-pane#account
+			.hero-unit#tab-hero
+				= simple_form_for(current_user, :url => registration_path(current_user), :html => { :method => :put }) do |f|
+				  = f.error_notification
+				  .email
+				  	p style="font-size:14px;" 이메일
+				  	= current_user.email
+				  .form-inputs
+				    = f.input :current_password, :required => false, label: "현재 비밀번호"
+				    = f.input :password, :autocomplete => "off", :required => false, label: "새 비밀번호"
+				    = f.input :password_confirmation, :required => false, label: "새 비밀번호 확인"
+				    = f.input :profile, label: "프로필 사진"
+				    = f.button :submit, "수정완료"
+
+		.tab-pane#history
+			.hero-unit#tab-hero
+				label
+					h3 내가 참여한 액티비티
+				table.table.table-hover
+					thead
+						tr
+							th 제목
+							th 날짜
+							th 선생님
+							th 금액
+							th 상태
+					tbody
+						- @dayclasses.each do |dayclass|
+							tr
+								td = dayclass.title
+								td = dayclass.enddate
+								td = dayclass.client.name
+								td 
+									= dayclass.fee
+									| 원
+								td = dayclass.attendship_status(current_user.id)

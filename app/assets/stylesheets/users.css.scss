@@ -228,3 +228,29 @@ p#policy{
 	overflow-x: hidden;
 	overflow-y: auto;
 }
+
+// ------------ mypage
+
+.mypage{
+
+	border: 1px solid  #cfcfcf;
+
+	ul.nav.nav-tabs{
+		background-color: #cfcfcf;
+	
+		li.customli{
+			padding-top: 10px;
+			padding-right: 10px;
+			padding-left: 10px;
+
+		}
+		li:hover.customli{
+			color: #ffffff;
+		}
+	}
+
+	.hero-unit#tab-hero{
+		background-color: #ffffff;
+	}
+}
+

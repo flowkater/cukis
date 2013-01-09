@@ -42,9 +42,9 @@ namespace :deploy do
     run "cd #{deploy_to}/current && bundle exec rake db:migrate RAILS_ENV=production"
   end
 
-  task :db_drop do
-    run "cd #{deploy_to}/current && bundle exec rake db:drop RAILS_ENV=production"
-  end
+  # task :db_drop do
+    # run "cd #{deploy_to}/current && bundle exec rake db:drop RAILS_ENV=production"
+  # end
 
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"

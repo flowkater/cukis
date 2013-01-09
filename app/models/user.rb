@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
     attendships.collect{|attendship| attendship if attendship.dayclass_id == dayclass_id}
   end
 
+  def classes
+    attendships.collect{|attendship| attendship.dayclass }
+  end
+
   # # email require
   # def email_required?
   #   super && phone.blank?
