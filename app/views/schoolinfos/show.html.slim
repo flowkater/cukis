@@ -20,5 +20,4 @@
 					h1#title
 						= article.title
 				p#contents
-					= truncate(article.content_strip_tags, length: 100)
-					/| 컨텐츠 헤드 는36폰트로 본문은 24폰트 한덩어리는 다섯글자로 구성되었음 가로크기는 900px로 설정하였음 그림높이는 300px이고 가로세로비 4:3을가짐 줄간격36px 글자의수는 10^2자임
+					= truncate(article.content_strip_tags, length: 200)
