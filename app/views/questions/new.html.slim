@@ -1,0 +1,22 @@
+h1 고객지원센터
+p 언제나 여러분의 목소리에 귀기울이는 쿠키스가 되겠습니다.
+.questions-form
+	.row
+		.span8
+			.hero-unit#question-hero
+				= simple_form_for @question, html: {class: 'form-horizontal'} do |f|
+					= f.input :name, label: "이름 *", required: false,placeholder: "성함을 입력해주세요."
+					= f.input :phone, label: "전화번호", required: false, placeholder: "연락처를 입력해주세요."
+					= f.input :email, label: "이메일 *", required: false, placeholder: "이메일을 입력해주세요"
+					= f.input :title, label: "제목 *", required: false, placeholder: "ex) 궁금한 사항이 있습니다."
+					= f.input :content, label: "내용 *", required: false, input_html: {class: 'question_content'}
+					.question_btn
+						= f.button :submit, "보내기", class: "btn btn-primary question_send_btn"
+		.span4
+			.phone-box
+				.phone-border
+					.phone-img
+						= image_tag "phone.png", class: "img-phone"
+					.phone-sentence
+						p 전화문의는
+						h3 050-7449-8692

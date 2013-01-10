@@ -34,11 +34,10 @@ h1 Day 클래스 개설하기
 						#form-float
 							= f.input :endtime, as: :string, input_html: {id: 'etc-form-date', class: 'timepicker'}, label: false ,wrapper: false, placeholder: "시간"
 						.tail 까지
-					= f.input :place, label: "장소" do
-						= f.input_field :place, id: 'etc-form-place'
-						= button_tag content_tag(:p, '검색'), type: 'button', class: 'btn btn-primary', id: 'place-button'
+					= f.input :place, label: "장소", id: 'etc-form-place', as: :select, collection: ["강남 에이블스퀘어"]
+						/= button_tag content_tag(:p, '검색'), type: 'button', class: 'btn btn-primary', id: 'place-button'
 					/= f.input :coverpic, label: "메인사진"
 				.from-actions
 					= f.button :submit, "클래스 만들기", class: "btn btn-primary"
 		.span2#daylass-formhint
-			.hero-unit
+			= image_tag "dayclass_guide.PNG", class: "dayclass_guide_img"

@@ -102,6 +102,7 @@
 }
 
 .form-end-float{
+	margin-left: -90px;
 	.controls{
 		margin-left: 20px;
 	}
@@ -158,6 +159,12 @@
 .dayclass-form{
 	label{
 		font-weight: bold;
+	}
+	.span2{
+		width: 170px;
+		.dayclass_guide_img{
+			width: 170px;
+		}
 	}
 }
 
@@ -319,6 +326,10 @@
 					width: 82px;
 					float:left;
 					//margin-top: -45px;
+					.logocircle{
+						width: 82px;
+						height: 82px;
+					}
 				}
 				p#major{
 					margin-top: 8px;

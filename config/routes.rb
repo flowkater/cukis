@@ -30,6 +30,7 @@ Cukis::Application.routes.draw do
   match "/agreement", to: "main#agreement"
   match "/introduce", to: "main#introduce"
   match "/question", to: "main#question"
+  resources :questions, only: [:new, :create]
 
   ActiveAdmin.routes(self)
 

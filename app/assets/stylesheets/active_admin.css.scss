@@ -14,9 +14,14 @@
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
-//   body.active_admin {
-//      .status_tag { background: #6090DB; }
-//   }
+  body.active_admin {
+    .wmd-editor{
+			overflow: hidden;
+			width: 960px;
+			background: #cfcfcf;
+			padding: 20px 20px 20px 20px;
+		}
+  }
 //
 // Notice that Active Admin CSS rules are nested within a
 // 'body.active_admin' selector to prevent conflicts with

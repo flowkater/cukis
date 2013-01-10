@@ -7,27 +7,23 @@
 			= link_to "#account", data: {toggle: "tab"} do
 				| 계정관리
 		li.customli
-			= link_to "#history", data: {toggle: "tab"} do
-				| 결제기록
+			= link_to new_dayclass_path do
+				| 클래스 개설
 	.tab-content
 		.tab-pane.active#mycukis
 			.hero-unit#tab-hero
 				label 
-					h3 내가 참여한 액티비티
+					h3 내가 만든 액티비티
 				table.table.table-hover
 			  		thead
 			    		tr
 				      th  제목
 				      th  날짜
-				      th  선생님
 			  		tbody
 		  			- @dayclasses.each do |dayclass|
 			    		tr
-			    		td = dayclass.title
+			    		td = link_to dayclass.title, dayclass_path
 			    		td = dayclass.enddate
-			    		td 
-			    			= dayclass.client.name
-			    			| &nbsp;선생님
 		.tab-pane#account
 			.hero-unit#tab-hero
 				= simple_form_for(current_client, :url => registration_path(current_client), :html => { :method => :put }) do |f|
@@ -42,25 +38,3 @@
 				    = f.input :profile, label: "프로필 사진"
 				    = f.button :submit, "수정완료"
 
-		.tab-pane#history
-			.hero-unit#tab-hero
-				label
-					h3 내가 참여한 액티비티
-				table.table.table-hover
-					thead
-						tr
-							th 제목
-							th 날짜
-							th 선생님
-							th 금액
-							th 상태
-					tbody
-						- @dayclasses.each do |dayclass|
-							tr
-								td = dayclass.title
-								td = dayclass.enddate
-								td = dayclass.client.name
-								td 
-									= dayclass.fee
-									| 원
-								td = dayclass.attendship_status(current_client.id)

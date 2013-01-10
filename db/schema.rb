@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130106215501) do
+ActiveRecord::Schema.define(:version => 20130110051034) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -73,9 +73,12 @@ ActiveRecord::Schema.define(:version => 20130106215501) do
   add_index "attendships", ["user_id"], :name => "index_attendships_on_user_id"
 
   create_table "clients", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "schoolinfo_id"
   end
+
+  add_index "clients", ["schoolinfo_id"], :name => "index_clients_on_schoolinfo_id"
 
   create_table "comments", :force => true do |t|
     t.string   "content"
@@ -166,6 +169,9 @@ ActiveRecord::Schema.define(:version => 20130106215501) do
     t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "phone"
+    t.string   "email"
   end
 
   create_table "relationships", :force => true do |t|
@@ -250,10 +256,12 @@ ActiveRecord::Schema.define(:version => 20130106215501) do
     t.string   "authentication_token"
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.integer  "schoolinfo_id"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+  add_index "users", ["schoolinfo_id"], :name => "index_users_on_schoolinfo_id"
 
 end

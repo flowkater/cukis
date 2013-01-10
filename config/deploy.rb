@@ -21,6 +21,7 @@ set :use_sudo, false
 set :keep_releases, 5
 set :rails_env, "production"
 set :normalize_asset_timestamps, false
+set :shared_children, shared_children + %w{public/uploads}
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
@@ -42,10 +43,6 @@ namespace :deploy do
   task :db_migrate do
     run "cd #{deploy_to}/current && bundle exec rake db:migrate RAILS_ENV=production"
   end
-
-  # task :db_drop do
-    # run "cd #{deploy_to}/current && bundle exec rake db:drop RAILS_ENV=production"
-  # end
 
   task :setup_config, roles: :app do
     sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/sites-enabled/#{application}"

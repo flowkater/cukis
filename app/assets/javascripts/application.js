@@ -29,7 +29,7 @@ $(function(){
 })
 
 $(document).ready(function() {
-	$('.dropdown-toggle').dropdown('toggle');
+	$('.dropdown-toggle').dropdown();
 
 	$('.carousel').carousel({
 		interval: 8000

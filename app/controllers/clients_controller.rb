@@ -4,7 +4,7 @@ class ClientsController < ApplicationController
 	def show
 		@client = Client.find(params[:id])
 		if current_client == @client
-			@dayclasses = current_user.classes
+			@dayclasses = current_client.dayclasses
 		else
 			redirect_to root_path
 		end
