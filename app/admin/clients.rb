@@ -9,6 +9,7 @@ ActiveAdmin.register Client do
 			f.input :phone
 			f.input :gender
 			f.input :birthday
+			f.input :schoolinfo_id
 		end
 		f.inputs "Check Authorization" do
 			f.input :is_mento
