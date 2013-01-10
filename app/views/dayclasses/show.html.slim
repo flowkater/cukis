@@ -43,7 +43,5 @@
 					= @dayclass.rest_people_show.html_safe 
 				.progress.progress-striped.active
 					.bar style="width: #{@dayclass.rest_people_ratio}%"
-				- if current_user
-					- unless current_user.find_class(@dayclass.id)
-						= link_to new_dayclass_attendship_path(@dayclass) do
-							p.btn.btn-info#apply 신청하기
+				= link_to new_dayclass_attendship_path(@dayclass) do
+					p.btn.btn-info#apply 신청하기

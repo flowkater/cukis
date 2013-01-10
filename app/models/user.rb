@@ -57,6 +57,14 @@ class User < ActiveRecord::Base
     attendships.collect{|attendship| attendship.dayclass }
   end
 
+  def judge_gender
+    if self.gender == "남자"
+      1
+    elsif self.gender == "여자"
+      2
+    end
+  end
+
   # # email require
   # def email_required?
   #   super && phone.blank?

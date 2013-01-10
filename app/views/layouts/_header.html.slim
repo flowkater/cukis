@@ -7,8 +7,14 @@ header.navbar.navbar-static-top.navbar-inverse
 				- if user_session
 					.dropdown#dropposition
 						= link_to '#', :id => "top-information", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
-							.drop-username 
-								= image_tag current_user.profile.url(:header_profile), class: "drop-userimage"
+							.drop-username
+								- if current_user.profile 
+									= image_tag current_user.profile.url(:header_profile), class: "drop-userimage"
+								- else
+									- if current_user.judge_gender == 1
+										= image_tag "default_profile_male.png", class: "drop-userimage"
+									- elsif current_user.judge_gender == 2
+										= image_tag "ddefault_profile_female.png", class: "drop-userimage"
 								= current_user.name
 								= image_tag "triangle.PNG", class: "drop-arrow"		
 						ul.dropdown-menu
