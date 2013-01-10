@@ -1,5 +1,14 @@
 // @import "bootstrap";
 
+@font-face{
+	font-family: 'NanumGothic';
+	src: asset-url('NanumGothic.eot',font);
+	src: asset-url('NanumGothic.eot',font) format('embedded-opentype'),
+			 asset-url('NanumGothic.woff',font) format('woff'),
+			 asset-url('NanumGothic.ttf',font) format('truetype'),
+			 asset-url('Nanumgothic.svg.NanumGothic', font) format('svg');
+}
+
 .form-horizontal .control-label{
 	width: 100px;
 	text-align: left;
@@ -33,7 +42,7 @@
 	font-weight: bold;		
 	margin-top: 14px;
 	a{
-		color: #fff;
+		color: #ffffff;
 	}
 	a:hover{
 		color: #4aabbf;
@@ -222,7 +231,8 @@ ul.nav.tabfont{
 	color: black;
 	height: 80px;
 	margin-top: 0;
-	font-size: 120px;
+	font-size: 30px;
+	font-weight: bold;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
 	background-color: transparent;
 	border: 0;

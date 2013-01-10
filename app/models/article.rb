@@ -13,4 +13,6 @@ class Article < ActiveRecord::Base
 		content = Sanitize.clean(self.content)
 		content.gsub(/(\[)(photo-url:")(\S*\D*)("\])/, ' ') #사진 출처
 	end
+
+	# (사진출처:")(\S*\D*)"
 end

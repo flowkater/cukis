@@ -6,6 +6,10 @@ class SchoolinfosController < ApplicationController
 
 	def show
 		@schoolinfo = Schoolinfo.find(params[:id])
-		@articles = @schoolinfo.articles
+		@article = @schoolinfo.articles.first
+
+		if @article
+			redirect_to article_path(@article)
+		end
 	end
 end

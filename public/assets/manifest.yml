@@ -1,4 +1,8 @@
 ---
+!binary "TmFudW1Hb3RoaWMuZW90": NanumGothic-05f180c8e55c3f33e50049e4eb2050c4.eot
+!binary "TmFudW1Hb3RoaWMudHRm": NanumGothic-a9394dfcda994b458a134f4565720bfb.ttf
+!binary "TmFudW1Hb3RoaWMud29mZg==": NanumGothic-324ad147f6b3187ac7c2b70f7a5510d5.woff
+!binary "TmFudW1nb3RoaWMuc3ZnLk5hbnVtR290aGlj": Nanumgothic.svg-06e7189cbad8fef49038858c2eed005f.NanumGothic
 !binary "MTYwMDYwMC5QTkc=": 1600600-7e45f3fcd3c90238d558f964f9d0be9e.PNG
 !binary "U2F0aGVyLUdhdGUtSm1vZC05NDAteC0yMDAuanBn": Sather-Gate-Jmod-940-x-200-4fae624b1f264eeef282beebbaa176be.jpg
 !binary "YWN0aXZpdHlfYm94LlBORw==": activity_box-e06f69e9f4d147af3c316850a1a94272.PNG
@@ -39,13 +43,18 @@
 !binary "Y29sdW1iaWEvMzEucG5n": columbia/31-1d195833cd24d5abf3c8ab38c2606631.png
 !binary "Y29sdW1iaWEvMzIucG5n": columbia/32-9ebeb5b67748026ae63e53d4b522bae8.png
 !binary "Y29sdW1iaWEvMzMucG5n": columbia/33-518cba37009367b69d2722ccc81f5fb2.png
+!binary "Y29tcGxldGVfMi5wbmc=": complete_2-1b4a22f226a516047a6ea70442fb3d9e.png
 !binary "Y292ZXJwaWNfZHVtbXkucG5n": coverpic_dummy-8a78a815c49bb1dcf510cad1eb4d41ea.png
 !binary "Y3VraXNfbG9nby5wbmc=": cukis_logo-f8175c558d99e1189ab2ba198c703359.png
+!binary "ZGF5Y2xhc3NfZ3VpZGUuUE5H": dayclass_guide-eff43fb8c4c8354cf8a014475eed2c92.PNG
+!binary "ZGVmYXVsdF9wcm9maWxlX2ZlbWFsZS5wbmc=": default_profile_female-ba77452c8a40b33bbf52d7067c2e12c5.png
+!binary "ZGVmYXVsdF9wcm9maWxlX21hbGUucG5n": default_profile_male-bf5865c4454afe503522b33a5cd933f1.png
 !binary "ZGl2aWRlci5wbmc=": divider-44fef12f965a08c1527ac96837cae0db.png
 !binary "ZHVtbXlfaW1nX2Jhbm5lci5wbmc=": dummy_img_banner-1c1f03bf6f54a7cb8006c8410ed7523c.png
 !binary "ZHVtbXlfaW1nX2Jhbm5lcl8yLnBuZw==": dummy_img_banner_2-cebe25e95399423e75a36b50b3e56f1f.png
 !binary "ZHVtbXlfaW1nX2Jhbm5lcl8zLlBORw==": dummy_img_banner_3-5f2f4127330eb499cb0ab036c81d20ee.PNG
 !binary "ZHVtbXlfaW1nX2Jhbm5lcl80LlBORw==": dummy_img_banner_4-8570e638e4c756cd8b262dd1f83d5554.PNG
+!binary "Zmlyc3RfZ2V0dGluZ3N0YXJ0ZWQucG5n": first_gettingstarted-849c9c3a93100a88adac1e7e792303ba.png
 !binary "Z2V0c3RhcnRlZC5wbmc=": getstarted-ae441b4804d5a3e77cc4dcbdc4985f9f.png
 !binary "aG9tZV9hY3Rpdml0eV9pbmRleF8zMjAuUE5H": home_activity_index_320-c3be7e139de68577e184a5d2d114a9e1.PNG
 !binary "aWNvbnMvZGF0ZS5wbmc=": icons/date-412d2601f529a198ecac394edaf455cb.png
@@ -79,6 +88,7 @@
 !binary "bWFrZWNsYXNzLnBuZw==": makeclass-d5a94faef60b90d9ce90cf1d799eeec8.png
 !binary "bWFrZWNsYXNzd2FpdC5QTkc=": makeclasswait-b9efcc3bae47d24a9623377708830b6a.PNG
 !binary "bW9yZS5wbmc=": more-f9bbaf7614b90e340639645f72c79b52.png
+!binary "cGhvbmUucG5n": phone-2e1874864c720edf6868b5944c50065d.png
 !binary "cmFpbHMucG5n": rails-be8732dac73d845ac5b142c8fb5f9fb0.png
 !binary "c2xpZGUyXzMucG5n": slide2_3-fc213ac67e59bde249f385769477e0fb.png
 !binary "c2xpZGUzLnBuZw==": slide3-d08f9ecc1ed7c6d0484e1f233050b9b3.png
@@ -89,9 +99,9 @@
 !binary "d2FpdGZvcmNsYXNzLlBORw==": waitforclass-580c96a258a935af39198f8f999e05c5.PNG
 !binary "d2lzZG9tZS5QTkc=": wisdome-81b7c0468e56960736fc72b729b6d770.PNG
 !binary "YWN0aXZlX2FkbWluLmpz": active_admin-913bc42797e4f560ff2ae0ade0a86eec.js
-!binary "YXBwbGljYXRpb24uanM=": application-d7d6f705a7327e2eb71625404f446611.js
-!binary "YWN0aXZlX2FkbWluLmNzcw==": active_admin-3ef1e17123914a93807d9a5d747aa3ec.css
-!binary "YXBwbGljYXRpb24uY3Nz": application-d635845d195d8fd8ef674003d6ab8fd5.css
+!binary "YXBwbGljYXRpb24uanM=": application-14740c6268c6a0d929c0be15583eb59e.js
+!binary "YWN0aXZlX2FkbWluLmNzcw==": active_admin-c98a7a99c5572536e59f639e989d5004.css
+!binary "YXBwbGljYXRpb24uY3Nz": application-f7c93138987729c358b97f53a8022d84.css
 !binary "XQ==": !binary |-
   XQ==
 !binary "YWN0aXZlX2FkbWluL2FkbWluX25vdGVzX2ljb24ucG5n": active_admin/admin_notes_icon-04bd616ed9d1ff51d7a53422d4caf510.png

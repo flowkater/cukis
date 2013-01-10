@@ -11,6 +11,10 @@ class Dayclass < ActiveRecord::Base
 	has_many :attendships, dependent: :destroy
 	has_many :users, through: :attendships
 
+	def paid_attendships
+		attendships.select { |a| a.paid == 1 }.size
+	end
+
 	def rest_people_show
 		people = rest_people
 		if people == 0 || people < 0
@@ -26,8 +30,8 @@ class Dayclass < ActiveRecord::Base
 
 	def rest_people_ratio
 		maxnumber = self.maxnumber * 1.0
-		if attendships.size <= maxnumber
-			(attendships.size / maxnumber) * 100 
+		if paid_attendships <= maxnumber
+			(paid_attendships / maxnumber) * 100 
 		end
 	end
 
