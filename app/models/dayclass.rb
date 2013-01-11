@@ -17,10 +17,27 @@ class Dayclass < ActiveRecord::Base
 
 	def rest_people_show
 		people = rest_people
-		if people == 0 || people < 0
-			'<p id="content">클래스 정원이 모두 찼습니다.</p>'
+		unless over_enddate
+			if people == 0 || people < 0
+				'<p id="content">클래스 정원이 모두 찼습니다.</p>'
+			else
+				"<p id='content'>#{people}<p id='unit'> 명 남았습니다.</p></p>"
+			end
 		else
-			"<p id='content'>#{people}<p id='unit'> 명 남았습니다.</p></p>"
+			'<p id="content">마감되었습니다.</p>'
+		end
+	end
+
+	def rest_people_index
+		people = rest_people
+		unless over_enddate
+			if people == 0 || people < 0
+				'클래스 정원이 모두 찼습니다.'
+			else
+				"#{people} 명 남았습니다."
+			end
+		else
+			'마감되었습니다.'
 		end
 	end
 
@@ -44,5 +61,17 @@ class Dayclass < ActiveRecord::Base
 		else
 			"결제 도중 오류가 발생했습니다."
 		end
+	end
+
+	def over_enddate
+		if over_time < 0
+			true
+		else
+			false
+		end
+	end
+
+	def over_time
+		Time.local(enddate.year, enddate.month, enddate.day, endtime.hour) - Time.now
 	end
 end

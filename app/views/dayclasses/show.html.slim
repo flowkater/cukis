@@ -42,5 +42,6 @@
 					= @dayclass.rest_people_show.html_safe 
 				.progress.progress-striped.active
 					.bar style="width: #{@dayclass.rest_people_ratio}%"
-				= link_to new_dayclass_attendship_path(@dayclass) do
-					p.btn.btn-info#apply 신청하기
+				- unless @dayclass.over_enddate
+					= link_to new_dayclass_attendship_path(@dayclass) do
+						p.btn.btn-info#apply 신청하기

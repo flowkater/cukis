@@ -14,7 +14,7 @@
       - @dayclasses.each do |dayclass|
         li.dayclassspan
           .activity
-            = link_to dayclass do
+            = link_to dayclass do 
               .coverdate
                 .covertext
                   = l dayclass.enddate, format: :index
@@ -36,5 +36,4 @@
                 .rest
                   p#rt 인원 
                   | &nbsp;:&nbsp;
-                  = dayclass.rest_people
-                  | 명 남았습니다.
+                  = dayclass.rest_people_index

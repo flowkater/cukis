@@ -3,7 +3,7 @@ class DayclassesController < ApplicationController
 	before_filter :authenticate_client!, only: [:new]
 
 	def index
-		@dayclasses = Dayclass.approve
+		@dayclasses = Dayclass.approve.sort{|d| d.over_time}
 	end
 
 	def show
