@@ -1,10 +1,11 @@
 doctype html
 html
 	head
-		title Cukis
+		title Cukis - Live Mentoring with Curious Kids
 		/! Le HTML5 shim, for IE6-8 support of HTML5 elements
 		/[if lt IE 9] 
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		= favicon_link_tag "/favicon.ico"
 		= stylesheet_link_tag    "application", media: "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
@@ -21,6 +22,6 @@ html
 		= render 'layouts/header'
 		.container.body-con
 			- if notice
-				.alert.alert-info = notice
+				.alert.alert-info = notiec
 			= yield
 		= render 'layouts/footer'

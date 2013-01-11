@@ -17,11 +17,11 @@
             = link_to dayclass do
               .coverdate
                 .covertext
-                  = dayclass.enddate.strftime("%Y. %m. %d.")
+                  = l dayclass.enddate, format: :index
                   | &nbsp;
-                  = dayclass.endtime.strftime("%p %l : %M")
+                  = l dayclass.endtime, format: :index
               .day-coverimg = image_tag dayclass.coverpic.url(:cover), class: "cover"
-              .teacherimg = image_tag dayclass.client.profile.url(:index_profile), class: "teacher_img"  
+              .teacherimg = image_tag dayclass.client.profile_image, class: "teacher_img"  
               h3#teacher_name 
                 = dayclass.client.school
                 | ,&nbsp;

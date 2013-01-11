@@ -23,16 +23,15 @@
 					.img = image_tag "icons/date.png"
 					p#id 날짜: 
 					p#content 
-						= @dayclass.enddate
+						= l @dayclass.enddate, format: :index
 				.attr
 					.img = image_tag "icons/time.png"	
 					p#id 시간: 
-					p#content = @dayclass.endtime.strftime("%p %l : %M")
+					p#content = l @dayclass.endtime, format: :index
 				.attr
 					.img = image_tag "icons/fee.png"		
 					p#id 비용: 
-					p#content = @dayclass.fee
-					p#unit &nbsp;원/명
+					p#content = number_to_currency(@dayclass.fee)
 				.attr
 					.img = image_tag "icons/place.png"
 					p#id 장소: 

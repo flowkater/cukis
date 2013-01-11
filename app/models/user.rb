@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   end
 
   def find_class(dayclass_id)
-    attendships.collect{|attendship| attendship if attendship.dayclass_id == dayclass_id}
+    attendships.select{|attendship| attendship.dayclass_id == dayclass_id}.first
   end
 
   def classes
@@ -62,6 +62,18 @@ class User < ActiveRecord::Base
       1
     elsif self.gender == "여자"
       2
+    end
+  end
+
+  def profile_image
+    if self.profile.url.nil?
+      if judge_gender == 1
+        "default_profile_male.png"
+      elsif judge_gender == 2
+        "default_profile_female.png"
+      end
+    else
+      self.profile.url
     end
   end
 

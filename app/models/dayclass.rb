@@ -18,14 +18,14 @@ class Dayclass < ActiveRecord::Base
 	def rest_people_show
 		people = rest_people
 		if people == 0 || people < 0
-			'<p id="content">마감되었습니다.</p>'
+			'<p id="content">클래스 정원이 모두 찼습니다.</p>'
 		else
 			"<p id='content'>#{people}<p id='unit'> 명 남았습니다.</p></p>"
 		end
 	end
 
 	def rest_people
-		maxnumber - attendships.size
+		maxnumber - paid_attendships
 	end
 
 	def rest_people_ratio

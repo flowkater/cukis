@@ -3,36 +3,26 @@ header.navbar.navbar-static-top.navbar-inverse
 		.container
 			= link_to root_path do
 				= image_tag "logo_100.png", class: "cukis-logo"
-			ul.nav.pull-right style="width:140px"
-				- if user_session
-					.dropdown#dropposition
-						= link_to '#', :id => "top-information", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
-							.drop-username
-								- if current_user.profile 
-									= image_tag current_user.profile.url(:header_profile), class: "drop-userimage"
-								- else
-									- if current_user.judge_gender == 1
-										= image_tag "default_profile_male.png", class: "drop-userimage"
-									- elsif current_user.judge_gender == 2
-										= image_tag "ddefault_profile_female.png", class: "drop-userimage"
-								= current_user.name
-								= image_tag "triangle.PNG", class: "drop-arrow"		
-						ul.dropdown-menu
-							li = link_to '마이페이지', user_path(current_user)
-							li.menu-divider
-							li = link_to "로그아웃", destroy_user_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
-				- elsif client_session
-					.dropdown#dropposition
-						= link_to '#', :id => "top-information", :class => "dropdown-toggle", "data-toggle" => "dropdown" do
-							.drop-username 
-								= image_tag current_client.profile.url(:header_profile), class: "drop-userimage"
-								= current_client.name
-								= image_tag "triangle.PNG", class: "drop-arrow"		
-						ul.dropdown-menu
-							li = link_to '마이페이지', client_path(current_client)
-							li.menu-divider
-							li = link_to "로그아웃", destroy_client_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
-				- else
+			- if user_session
+				ul.nav.pull-right#user
+					.user_imgname
+						li#img = image_tag current_user.profile_image, class: "drop-userimage", style: "margin-top:-5px;margin-right:5px;"
+						li = current_user.name
+					li#bar |	
+					li = link_to '마이페이지', user_path(current_user)
+					li#bar |
+					li = link_to "로그아웃", destroy_user_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
+			- elsif client_session
+				ul.nav.pull-right#user
+					.user_imgname
+						li#img = image_tag current_client.profile_image, class: "drop-userimage", style: "margin-top:-5px;margin-right:5px;"
+						li = current_client.name
+					li#bar |	
+					li = link_to '마이페이지', client_path(current_client)
+					li#bar |
+					li = link_to "로그아웃", destroy_client_session_path, :method => :delete, confirm: "로그아웃 하시겠습니까?"
+			- else
+				ul.nav.pull-right style="width:137px;"
 					.userlogin = link_to "로그인", prelogin_path
 					.userbar &nbsp;|&nbsp;
 					.userregister = link_to "회원가입", preregister_path

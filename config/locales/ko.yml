@@ -10,6 +10,7 @@ ko:
       default: "%Y/%m/%d"
       short: "%m/%d"
       long: "%Y년 %m월 %d일 (%a)"
+      index: "%m월 %d일(%a)"
 
     day_names:
       - 일요일
@@ -67,6 +68,7 @@ ko:
       default: "%Y/%m/%d %H:%M:%S"
       short: "%y/%m/%d %H:%M"
       long: "%Y년 %B월 %d일, %H시 %M분 %S초 %Z"
+      index: "%p %l:%M"
     am: "오전"
     pm: "오후"
 

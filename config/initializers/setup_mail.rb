@@ -11,7 +11,7 @@ ActionMailer::Base.smtp_settings = {
 ActionMailer::Base.delivery_method = :smtp
 
 if Rails.env.development?
-  ActionMailer::Base.default_url_options[:host] = "192.168.0.24:3000"
+  ActionMailer::Base.default_url_options[:host] = "127.0.0.1:3000"
 else
   ActionMailer::Base.default_url_options[:host] = "cukis.net"
 end

@@ -45,11 +45,11 @@
 						option 계좌이체 
 				= simple_form_for [@dayclass ,@attendship], html: {class: 'form-horizontal'} do |f|
 					td 
-						= f.input :sender, placeholder: "입금인 성명을 입력해주세요.", label: false
+						= f.input :sender, placeholder: "입금인 성명을 입력해주세요.", label: false, input_html:{value: "#{current_user.name}"}
 					td 
-						= f.input :sender_email, placeholder: "example@cukis.net", label: false
+						= f.input :sender_email, placeholder: "example@cukis.net", label: false,input_html:{value: "#{current_user.email}"}
 					td
-						= f.input :sender_phone, placeholder: "010-1234-4321", label: false
+						= f.input :sender_phone, placeholder: "010-1234-4321", label: false,input_html:{value: "#{current_user.phone}"}
 					= f.button :submit, "신청하기", class: "btn btn-primary", style: "position: absolute;margin-top: 120px;margin-left: 800px;padding: 10px 20px;font-size: 18px;"
 
 		h4 계좌정보

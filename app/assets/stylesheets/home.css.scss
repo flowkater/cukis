@@ -1,12 +1,11 @@
 // @import "bootstrap";
-
 @font-face{
-	font-family: 'NanumGothic';
-	src: asset-url('NanumGothic.eot',font);
-	src: asset-url('NanumGothic.eot',font) format('embedded-opentype'),
-			 asset-url('NanumGothic.woff',font) format('woff'),
-			 asset-url('NanumGothic.ttf',font) format('truetype'),
-			 asset-url('Nanumgothic.svg.NanumGothic', font) format('svg');
+	font-family: 'Daum_Regular';
+	src: asset-url('Daum_Regular.eot',font);
+	src: asset-url('Daum_Regular.eot',font) format('embedded-opentype'),
+			 asset-url('Daum_Regular.woff',font) format('woff'),
+			 asset-url('Daum_Regular.ttf',font) format('truetype'),
+			 asset-url('Daum_Regular.svg.Daum_Regular', font) format('svg');
 }
 
 .form-horizontal .control-label{
@@ -63,7 +62,7 @@
 	font-weight: bold;		
 	margin-top: 14px;
 	a{
-		color: #fff;
+		color: #ffffff;
 	}
 	a:hover{
 		color: #4aabbf;
@@ -71,42 +70,22 @@
 	}
 }
 
-.dropdown#dropposition{
-	right: 15px;
-	top: 5px;
-	a.dropdown-toggle{
-		color: #fff;
+ul.nav.pull-right#user{
+	color: white;
+	li#bar{
+		padding-top: 10px;
 	}
-	a:hover.dropdown-toggle{
-		color: #4aabbf;
-		text-decoration: none;
-	}
-
-	.drop-username{
-		font-size: 18px;
-		font-weight: bold;		
-		margin-top: 5px;
-		margin-left: 10px;
-
-		.drop-userimage{
-			width: 30px;
-			height: 30px;
+	.user_imgname{
+		li{
+			float: left;
 			margin-right: 5px;
 		}
-
-		.drop-arrow{
-			margin-left: 5px;
-			width: 15px;
-			height: 15px;
-		}
+		float: left;
+		padding: 10px 15px;
 	}
-
-	li.menu-divider{
-		width: 100%;
-		margin-top: 10px;
-		margin-bottom: 10px;
-		height: 1px;
-		background-color: #cfcfcf;
+	.drop-userimage{
+		width: 30px;
+		height: 30px;
 	}
 }
 
@@ -231,7 +210,7 @@ ul.nav.tabfont{
 	color: black;
 	height: 80px;
 	margin-top: 0;
-	font-size: 30px;
+	font-size: 80px;
 	font-weight: bold;
 	text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
 	background-color: transparent;
