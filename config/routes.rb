@@ -36,10 +36,10 @@ Cukis::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :clients, path_names: {sign_in: 'login', sign_out: 'logout'}
+  devise_for :clients, path_names: {sign_in: 'login', sign_out: 'logout'}, controllers: {registrations: 'clients/registrations', sessions: 'clients/sessions'}
   resources :clients, only: [:show]
 
-  devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}
+  devise_for :users, path_names: {sign_in: 'login', sign_out: 'logout'}, controllers: {registrations: 'users/registrations', sessions:'users/sessions'}
   resources :users, only: [:show]
 
   resources :postacts
