@@ -10,10 +10,12 @@ gem 'rails', '3.2.2'
 # XMPP4r
 gem 'xmpp4r', '0.5'
 
-# view
+# Slim template
 gem 'slim-rails'
 gem 'haml2slim'
 gem 'slim'
+
+# form
 gem 'simple_form'
 gem 'hpricot'
 gem 'ruby_parser'
