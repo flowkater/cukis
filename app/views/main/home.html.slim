@@ -1,50 +1,26 @@
-#myCarousel.carousel.slide
-	.carousel-inner
-		.active.item
-			.banner
-				= image_tag "http://dummyimage.com/1600x600/cfcfcf/ffffff.png"
-		.item
-			.banner
-				= image_tag "1600600.PNG"
-	a.left.carousel-control href="#myCarousel" data-slide="prev" &lsaquo;
-	a.right.carousel-control href="#myCarousel" data-slide="next" &rsaquo;
-.hero-unit#heroback
-	ul.thumbnails
-		li.actspan4
-			.actbox
-				.boxheader
-				.thumb = image_tag "http://dummyimage.com/300x150/cfcfcf/ffffff.png"
-				h2#boxsub Subject
-				p#boxp 가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하...
-				.boxprofile
-					.profile-im = image_tag "http://dummyimage.com/60x60/cfcfcf/ffffff.png"
-					.profile-box
-						.profile-name 가나다 선생님
-						.profile-info 카나다라 대학 하카타차하
-			/= image_tag "home_activity_index_320.PNG"
-		li.actspan4
-			.actbox
-				.boxheader
-				.thumb = image_tag "http://dummyimage.com/300x150/cfcfcf/ffffff.png"
-				h2#boxsub Subject
-			/= image_tag "home_activity_index_320.PNG"
-		li.actspan4
-			.actbox
-				.boxheader
-				.thumb = image_tag "http://dummyimage.com/300x150/cfcfcf/ffffff.png"
-				h2#boxsub Subject
-			/= image_tag "home_activity_index_320.PNG"
-		li.actspan4
-			.actbox
-				.boxheader
-				.thumb = image_tag "http://dummyimage.com/300x150/cfcfcf/ffffff.png"
-				h2#boxsub Subject
-		li.actspan4
-			.actbox
-				.boxheader
-				.thumb = image_tag "http://dummyimage.com/300x150/cfcfcf/ffffff.png"
-				h2#boxsub Subject
-		li.actspan4#more
-			/.actbox
-			= image_tag "more.png"
+.wrapper
+	#myCarousel.carousel.slide
+		.carousel-inner
+			.active.item
+				.banner
+					= image_tag "slide1_5.png"
+			.item
+				.banner
+					= image_tag "slide2_3.png"
+		a.left.carousel-control href="#myCarousel" data-slide="prev" &lsaquo;
+		a.right.carousel-control href="#myCarousel" data-slide="next" &rsaquo;
+	.hero-unit#heroback
+		ul.thumbnails
+			li.actspan4
+				.actbox
+					.boxheader
+					.thumb = image_tag "http://dummyimage.com/300x150/cfcfcf/ffffff.png"
+					h2#boxsub Subject
+					p#boxp 가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하...
+					.boxprofile
+						.profile-im = image_tag "http://dummyimage.com/60x60/cfcfcf/ffffff.png"
+						.profile-box
+							.profile-name 가나다 선생님
+							.profile-info 카나다라 대학 하카타차하
+					= image_tag "home_activity_index_320.PNG"
 			
