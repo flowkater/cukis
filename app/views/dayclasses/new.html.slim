@@ -8,7 +8,7 @@
 			= simple_form_for @dayclass, html: { class: 'form-horizontal' } do |f|
 				.hero-unit#dayclass-hero
 					= f.input :title, label: "제목", input_html: {id: 'title-form-size'}
-					= f.editor_image_field
+					/= f.editor_image_field
 					= f.input :content, input_html: {class: "smart-editor-text-area"}
 				.hero-unit#dayclass-hero
 					.dayclass-fee
