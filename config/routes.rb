@@ -1,7 +1,7 @@
 require 'api_constraints'
 
 Cukis::Application.routes.draw do
-  mount SmartEditor::Engine => '/smart_editor'
+  # mount SmartEditor::Engine => '/smart_editor'
 
   namespace :api, defaults: {format: 'json'} do
     scope module: :v1, constraints: ApiConstraints.new(version: 1, default: :true) do
