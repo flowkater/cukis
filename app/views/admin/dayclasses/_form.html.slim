@@ -10,7 +10,13 @@
 	= f.input :doc
 	= f.input :place
 	= f.input :coverpic
-	= f.input :client_id
+	= f.association :client
+	= f.input :is_client
+	= f.input :client_profile
+	= f.input :client_schoollogo
+	= f.input :client_schoolname
+	= f.input :client_major
+	= f.input :client_name
 	= f.input :approve
 	= f.input :content
 	= f.button :submit

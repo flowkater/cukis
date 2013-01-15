@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130114104005) do
+ActiveRecord::Schema.define(:version => 20130115052129) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -99,9 +99,17 @@ ActiveRecord::Schema.define(:version => 20130114104005) do
     t.string   "place"
     t.string   "coverpic"
     t.integer  "client_id"
-    t.boolean  "approve",    :default => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.boolean  "approve",           :default => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.boolean  "is_client"
+    t.string   "client_profile"
+    t.string   "client_schoollogo"
+    t.string   "client_schoolname"
+    t.string   "client_major"
+    t.string   "client_name"
+    t.datetime "fromdatetime"
+    t.datetime "enddatetime"
   end
 
   create_table "globalinfos", :force => true do |t|
@@ -262,6 +270,7 @@ ActiveRecord::Schema.define(:version => 20130114104005) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.integer  "schoolinfo_id"
+    t.text     "introduce"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true

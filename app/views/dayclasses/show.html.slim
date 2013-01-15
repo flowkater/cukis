@@ -3,16 +3,16 @@
 		.span7#left
 			.profile	
 				.cover_pic
-					=image_tag @dayclass.coverpic.url(:show_cover)
+					=image_tag @dayclass.coverpic.url(:show_cover), class: "dayclass_coverpic"
 				.teacher_img
-					=image_tag @dayclass.client.profile.url(:show_profile), class: "teacherimg"
+					=image_tag @dayclass.mento_profile_show, class: "teacherimg"
 				.name
-					.schoollogo= image_tag @dayclass.client.schoolinfo.logocircle, class: "logocircle"
+					.schoollogo= image_tag @dayclass.mento_schoollogo, class: "logocircle"
 					p#major 
-						= @dayclass.client.school
+						= @dayclass.mento_schoolname
 						| , &nbsp;
-						= @dayclass.client.major
-					p#name = @dayclass.client.name
+						= @dayclass.mento_major
+					p#name = @dayclass.mento_name
 			.teacher_name_tag
 				h1.title = @dayclass.title
 			.content

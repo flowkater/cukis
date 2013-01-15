@@ -21,11 +21,11 @@
                   | &nbsp;
                   = l dayclass.endtime, format: :index
               .day-coverimg = image_tag dayclass.coverpic.url(:cover), class: "cover"
-              .teacherimg = image_tag dayclass.client.profile_image, class: "teacher_img"  
+              .teacherimg = image_tag dayclass.mento_profile_index, class: "teacher_img"  
               h3#teacher_name 
-                = dayclass.client.school
+                = dayclass.mento_schoolname
                 | ,&nbsp;
-                = dayclass.client.name
+                = dayclass.mento_name
               p#subject = dayclass.title
               .line
               .class-info

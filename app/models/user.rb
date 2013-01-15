@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :phone,
                  :name, :gcm_regid,:gender, :birthday, :phone_first, :phone_second, :phone_third,
                  :use_policy, :personal_policy, :school, :major, :profile, :is_mento, :is_parent, :is_student,
-                 :membership, :schoolinfo_id
+                 :membership, :schoolinfo_id, :introduce
 
 
   mount_uploader :profile, ImageUploader

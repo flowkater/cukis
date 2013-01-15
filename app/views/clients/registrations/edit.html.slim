@@ -1,15 +1,12 @@
 h2
-  | Edit #{resource_name.to_s.humanize}
+  | 개인정보수정
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
   = f.error_notification
   .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    = f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
-    = f.input :password_confirmation, :required => false
-    = f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true
-  .form-actions
-    = f.button :submit, "Update"
-h3 Cancel my account
-p
-  | Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete}.
-= link_to "Back", :back
+    /= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false
+    /= f.input :password_confirmation, :required => false
+    = f.input :current_password, label: "현재 비밀번호", :hint => "정보를 변경하시려면 비밀번호가 필요합니다.", :required => false
+    = f.input :introduce, label: "자기소개"
+    = f.input :profile, label: "프로필 사진"
+    
+  = f.button :submit, "수정완료"

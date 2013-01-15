@@ -32,9 +32,7 @@
 				  	p style="font-size:14px;" 이메일
 				  	= current_client.email
 				  .form-inputs
-				    = f.input :current_password, :required => false, label: "현재 비밀번호"
-				    = f.input :password, :autocomplete => "off", :required => false, label: "새 비밀번호"
-				    = f.input :password_confirmation, :required => false, label: "새 비밀번호 확인"
+				    = f.input :introduce, label: "자기소개"
 				    = f.input :profile, label: "프로필 사진"
 				    = f.button :submit, "수정완료"
 

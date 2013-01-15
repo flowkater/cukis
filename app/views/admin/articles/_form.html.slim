@@ -1,16 +1,8 @@
 = simple_form_for [:admin, @article] do |f|
 	= f.input :title
 	= f.input :coverpic
-	= f.input :schoolinfo_id, collection: @schoolinfos
+	= f.association :schoolinfo
 	= f.input :approve
 	= f.input :spotlight
-	.wmd-editor
-		#notes-button.notes-bar
-		.control-group.text.optional
-			label.text.optional.control-label for="notes"
-			.controls
-				textarea.text.optional.form-size-text cols="40" id="notes" rows="20"
-		= f.input :content, input_html: {id: "notes-output"}
-		.notes-preview-subject 미리보기
-		#notes-preview.preview-box
-		= f.button :submit
+	= f.input :content
+	= f.button :submit

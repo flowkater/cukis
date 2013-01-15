@@ -4,8 +4,10 @@ class Dayclass < ActiveRecord::Base
 	scope :approve, where(approve: true)
 
 	attr_accessible :title, :content, :fee, :minnumber, :maxnumber, :fromdate, :enddate,:fromtime, :endtime, :doc, :place, :approve, :coverpic,
-									:client_id
+									:client_id, :is_client, :client_profile, :client_schoollogo, :client_schoolname, :client_major, :client_name
 	mount_uploader :coverpic, ImageUploader
+	mount_uploader :client_profile, ImageUploader
+	mount_uploader :client_schoollogo, LogocircleUploader
 	has_many :replies, as: :repliable
 	belongs_to :client
 
@@ -14,6 +16,54 @@ class Dayclass < ActiveRecord::Base
 
 	def paid_attendships
 		attendships.select { |a| a.paid == 1 }.size
+	end
+
+	def mento_profile_index
+		if is_client
+			client_profile.url(:index_profile)
+		else
+			client.profile_image
+		end
+	end
+
+	def mento_profile_show
+		if is_client
+			client_profile.url(:show_profile)
+		else
+			client.profile.url(:show_profile)
+		end
+	end
+
+	def mento_schoolname
+		if is_client
+			client_schoolname
+		else
+			client.school
+		end
+	end
+
+	def mento_major
+		if is_client
+			client_major
+		else
+			client.major
+		end
+	end
+
+	def mento_name
+		if is_client
+			client_name
+		else
+			client.name
+		end
+	end
+
+	def mento_schoollogo
+		if is_client
+			client_schoollogo
+		else
+			client.schoolinfo.logocircle
+		end
 	end
 
 	def rest_people_show
@@ -65,7 +115,7 @@ class Dayclass < ActiveRecord::Base
 	end
 
 	def over_enddate
-		if over_time < 0
+		if over_time <= 0
 			true
 		else
 			false
@@ -73,6 +123,10 @@ class Dayclass < ActiveRecord::Base
 	end
 
 	def over_time
-		Time.local(enddate.year, enddate.month, enddate.day, endtime.hour) - Time.now
+		class_datetime - Time.now
+	end
+
+	def class_datetime
+		Time.local(enddate.year, enddate.month, enddate.day, endtime.hour)
 	end
 end
