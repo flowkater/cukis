@@ -15,7 +15,6 @@
 //= require bootstrap.min
 //= require bootstrap-datepicker/core
 //= require bootstrap-timepicker
-//= require smart_editor
 
 $(document).ready(function() {
 	$('.dropdown-toggle').dropdown();

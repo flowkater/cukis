@@ -21,7 +21,7 @@ gem 'hpricot'
 gem 'ruby_parser'
 
 # Editor
-gem 'smart_editor' # nhn jindo opensource editor
+# gem 'smart_editor' # nhn jindo opensource editor
 
 # authentication
 gem 'devise'
