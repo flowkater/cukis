@@ -1,0 +1,22 @@
+.cover-how
+	.top = image_tag "how_top.png"
+	.mid1 = image_tag "process_1.PNG", class: "processimg"
+	.mid2
+		.left
+			h3 STEP 1
+			p - 당신이 나누고 싶은 경험을 들려주세요.
+			p - 클래스 시간, 장소, 가격등 기본정보를 기입합니다.
+		.center
+			h3 STEP 2
+			p - DAY클래스 개설 승인후, 모집이 시작됩니다.
+			p - 쿠키스와 함께 성공적인 DAY클래스를 위해 홍보합니다.
+		.right
+			h3 STEP 3
+			p - 당신의 경험을 사람들과 즐겁게 나누세요!
+			p - 클래스 후에도, 즐거운 시간을 나눕니다.
+	.bot
+		= link_to new_dayclass_path, class: "btn btn-danger", id: "day-btn-padding" do
+			| 클래스 등록하러가기
+		= link_to question_path, class: "btn btn-link" do
+			| 질문이 있으세요?
+

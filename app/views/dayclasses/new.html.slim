@@ -1,7 +1,10 @@
-h1 Day 클래스 개설하기
+.makeclass_title
+	h1 Day 클래스 개설하기
+.process
+	= image_tag "process_2.PNG"
 .dayclass-form
 	.row
-		.span9#dayclass-form
+		.span7#dayclass-form
 			= simple_form_for @dayclass, html: { class: 'form-horizontal' } do |f|
 				.hero-unit#dayclass-hero
 					= f.input :title, label: "제목", input_html: {id: 'title-form-size'}
