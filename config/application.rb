@@ -29,6 +29,7 @@ module Cukis
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     config.time_zone = 'Seoul'
     config.active_record.default_timezone = :local # 액티브 레코드에도 그대로 입력
+    config.active_record.time_zone_aware_attributes = false
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     I18n.locale = 'ko'

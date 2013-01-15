@@ -12,13 +12,5 @@
 	= f.input :coverpic
 	= f.input :client_id
 	= f.input :approve
-	#wmd-editor
-		#notes-button.notes-bar
-		.control-group.text.optional
-			label.text.optional.control-label for="notes"
-			.controls
-				textarea.text.optional.form-size-text cols="40" id="notes" rows="20"
-		= f.input :content, input_html: {id: "notes-output"}
-		.notes-preview-subject 미리보기
-		#notes-preview.preview-box
-		= f.button :submit
+	= f.input :content
+	= f.button :submit

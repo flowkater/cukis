@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.2'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,7 +8,7 @@ gem 'rails', '3.2.2'
 # gem 'mailcatcher'
 
 # XMPP4r
-gem 'xmpp4r', '0.5'
+# gem 'xmpp4r', '0.5'
 
 # Slim template
 gem 'slim-rails'
@@ -21,7 +21,7 @@ gem 'hpricot'
 gem 'ruby_parser'
 
 # Editor
-gem 'wmd-rails'
+gem 'smart_editor' # nhn jindo opensource editor
 
 # authentication
 gem 'devise'

@@ -1,5 +1,6 @@
 #encoding: UTF-8
 class Dayclass < ActiveRecord::Base
+	has_editor_images
 	scope :approve, where(approve: true)
 
 	attr_accessible :title, :content, :fee, :minnumber, :maxnumber, :fromdate, :enddate,:fromtime, :endtime, :doc, :place, :approve, :coverpic,

@@ -1,5 +1,5 @@
 class DayclassesController < ApplicationController
-
+	SmartEditor::bind_editor_images(self, "dayclass", [:create, :update])
 	before_filter :authenticate_client!, only: [:new]
 
 	def index

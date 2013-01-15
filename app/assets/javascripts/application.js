@@ -15,19 +15,7 @@
 //= require bootstrap.min
 //= require bootstrap-datepicker/core
 //= require bootstrap-timepicker
-//= require wmd/wmd
-//= require wmd/showdown
-
-$(function(){
-	new WMDEditor({
-		input: "notes",
-		button_bar: "notes-button",
-		preview: "notes-preview",
-		output: "notes-output",
-		helpLink: "http://daringfireball.net/projects/markdown/syntax",
-	});
-})
-
+//= require smart_editor
 
 $(document).ready(function() {
 	$('.dropdown-toggle').dropdown();
