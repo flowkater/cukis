@@ -1,8 +1,6 @@
 require 'api_constraints'
 
 Cukis::Application.routes.draw do
-  get "manage/dayclass_new"
-
   mount SmartEditor::Engine => '/smart_editor'
 
   namespace :api, defaults: {format: 'json'} do
